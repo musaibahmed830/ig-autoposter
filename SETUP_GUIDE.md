@@ -5,7 +5,7 @@ Roz automatically **1 feed post + 1 reel** — official Instagram Graph API se (
 ## System kya karta hai (roz 6 PM PKT)
 
 1. `topics.json` se aaj ka topic uthata hai (30 topics, rotate hote hain)
-2. Claude API se caption + 15 hashtags + alt-text + 4 slide texts likhwata hai
+2. Gemini API (free tier) se caption + 15 hashtags + alt-text + 4 slide texts likhwata hai
 3. Pillow se branded post image (1080x1350) aur 4 vertical slides banata hai
 4. ffmpeg se ~12 second ka reel banata hai (zoom + crossfade, optional music)
 5. Cloudinary par upload karke Graph API se post + reel publish kar deta hai
@@ -52,7 +52,7 @@ Graph API ko media ka **public URL** chahiye, is liye:
    **Secrets** (sensitive):
    | Secret | Value |
    |---|---|
-   | `ANTHROPIC_API_KEY` | console.anthropic.com se API key |
+   | `GEMINI_API_KEY` | aistudio.google.com/apikey se free API key |
    | `IG_USER_ID` | Step 2 wala ID |
    | `IG_ACCESS_TOKEN` | long-lived token |
    | `CLOUDINARY_CLOUD` | cloud name |
@@ -75,8 +75,8 @@ Graph API ko media ka **public URL** chahiye, is liye:
 ## Local test (publish ke baghair)
 
 ```bash
-pip install anthropic requests pillow
-export ANTHROPIC_API_KEY=sk-...
+pip install google-genai requests pillow
+export GEMINI_API_KEY=AIza...
 export BRAND_NAME="Apni Agency"
 DRY_RUN=1 python run_daily.py     # out/ folder mein post.jpg + reel.mp4 check karo
 ```
@@ -116,7 +116,7 @@ DRY_RUN=1 python run_daily.py     # out/ folder mein post.jpg + reel.mp4 check k
 
 ## Reach Advisor
 - Roz last 7 vs pichle 7 din ka avg reel reach compare karta hai
-- **Agar reach >20% gira** to: (1) Claude web-search se AAJ ke tactics research karta hai,
+- **Agar reach >20% gira** to: (1) Gemini web-search se AAJ ke tactics research karta hai,
   (2) dashboard par tips dikhata hai, (3) "manual reel day" flag karta hai
 - **Trending sounds ka sach:** Instagram API se in-app trending audio attach NAHI ho sakta
   (Meta ne allow hi nahi kiya). Is liye manual reel day par reel file ready milti hai —

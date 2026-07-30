@@ -55,19 +55,23 @@ def analyze():
 
 
 def research_tips():
-    """Claude + web_search se current (aaj ke) reach tactics."""
+    """Gemini + Google Search grounding se current (aaj ke) reach tactics."""
     try:
-        import anthropic
-        client = anthropic.Anthropic()
-        msg = client.messages.create(
-            model="claude-sonnet-4-6", max_tokens=1500,
-            tools=[{"type": "web_search_20250305", "name": "web_search", "max_uses": 3}],
-            messages=[{"role": "user", "content":
+        from google import genai
+        from google.genai import types
+        client = genai.Client(api_key=os.environ["GEMINI_API_KEY"])
+        resp = client.models.generate_content(
+            model="gemini-2.5-flash",
+            contents=(
                 "Search the web for the CURRENT best tactics (this month) to increase Instagram Reels "
                 "reach for a small business account. Then respond with ONLY a JSON array of 5 short, "
-                "specific, actionable tips (each under 25 words). No markdown fences."}])
-        text = "".join(b.text for b in msg.content if getattr(b, "type", "") == "text")
-        text = text.replace("```json", "").replace("```", "").strip()
+                "specific, actionable tips (each under 25 words). No markdown fences."),
+            config=types.GenerateContentConfig(
+                max_output_tokens=1500,
+                tools=[types.Tool(google_search=types.GoogleSearch())],
+            ),
+        )
+        text = resp.text.replace("```json", "").replace("```", "").strip()
         start = text.find("["); end = text.rfind("]") + 1
         return json.loads(text[start:end])[:5]
     except Exception as e:

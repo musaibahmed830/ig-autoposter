@@ -1,9 +1,10 @@
 """
-Roz ka content (Claude API) — variety engine ke plan ke mutabiq:
+Roz ka content (Gemini API, free tier) — variety engine ke plan ke mutabiq:
 har din alag topic + alag content style (tips/myth/story/stat...).
 """
 import os, json
-import anthropic
+from google import genai
+from google.genai import types
 from variety import todays_plan
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -11,7 +12,7 @@ OUT = os.path.join(HERE, "out")
 
 
 def generate(plan: dict) -> dict:
-    client = anthropic.Anthropic()
+    client = genai.Client(api_key=os.environ["GEMINI_API_KEY"])
     brand = os.environ.get("BRAND_NAME", "My Brand")
     niche = os.environ.get("NICHE", "digital marketing agency")
     city = os.environ.get("CITY", "Lahore")
@@ -28,12 +29,15 @@ Write Instagram content in {lang}. Respond with ONLY a JSON object, no markdown 
 - "alt_text": one sentence image description with 1-2 keywords (under 100 chars).
 - "slides": array of exactly {n} strings, each under 9 words, matching today's format (slide 1 = hook, last slide = CTA).
 """
-    msg = client.messages.create(
-        model="claude-sonnet-4-6", max_tokens=1400,
-        messages=[{"role": "user", "content": prompt}],
+    resp = client.models.generate_content(
+        model="gemini-2.5-flash",
+        contents=prompt,
+        config=types.GenerateContentConfig(
+            max_output_tokens=1400,
+            response_mime_type="application/json",
+        ),
     )
-    text = "".join(b.text for b in msg.content if b.type == "text")
-    data = json.loads(text.replace("```json", "").replace("```", "").strip())
+    data = json.loads(resp.text.replace("```json", "").replace("```", "").strip())
     data["hashtags"] = data.get("hashtags", [])[:15]
     data["slides"] = (data.get("slides", []) + [plan["topic"]] * n)[:n]
     data.update(plan)
