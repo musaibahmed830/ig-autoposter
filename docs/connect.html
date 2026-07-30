@@ -1,0 +1,154 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Connect Instagram — Autopilot</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700&family=Inter:wght@400;500&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0c1220;--panel:#121a2b;--line:#1e2a42;--amber:#f7b32b;--text:#e8ecf4;--dim:#8b96ad;--green:#4ade80;--red:#f87171}
+*{box-sizing:border-box;margin:0}
+body{background:var(--ink);color:var(--text);font:15px/1.65 Inter,system-ui,sans-serif;
+background-image:radial-gradient(900px 420px at 85% -10%,rgba(247,179,43,.07),transparent)}
+.wrap{max-width:680px;margin:0 auto;padding:32px 20px 70px}
+a{color:var(--amber)}
+header{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px}
+h1{font:700 24px Sora,sans-serif;letter-spacing:-.02em}
+h1 em{font-style:normal;color:var(--amber)}
+.back{font-size:13px;color:var(--dim);text-decoration:none}
+.lead{color:var(--dim);font-size:14px;margin-bottom:24px}
+.step{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:20px 22px;margin-bottom:14px;opacity:.45;pointer-events:none;transition:opacity .3s}
+.step.active{opacity:1;pointer-events:auto;border-color:#2a3a5c}
+.step.done{opacity:1;pointer-events:auto}
+.step h2{font:600 15px Sora,sans-serif;margin-bottom:4px;display:flex;align-items:center;gap:10px}
+.n{font:500 12px 'JetBrains Mono',monospace;background:var(--ink);border:1px solid var(--line);border-radius:99px;width:26px;height:26px;display:inline-flex;align-items:center;justify-content:center;color:var(--amber);flex:none}
+.step.done .n{background:var(--green);color:var(--ink);border-color:var(--green)}
+.hint{color:var(--dim);font-size:13px;margin:4px 0 12px}
+input,textarea{width:100%;background:var(--ink);border:1px solid var(--line);border-radius:10px;color:var(--text);font:500 13px 'JetBrains Mono',monospace;padding:11px 13px;margin-bottom:10px}
+input:focus,textarea:focus{outline:2px solid var(--amber);outline-offset:1px;border-color:var(--amber)}
+textarea{resize:vertical;min-height:64px}
+button{background:var(--amber);color:var(--ink);border:0;border-radius:10px;font:600 14px Inter,sans-serif;padding:11px 18px;cursor:pointer}
+button:hover{filter:brightness(1.08)}
+button.ghost{background:transparent;color:var(--amber);border:1px solid var(--amber)}
+button:disabled{opacity:.5;cursor:wait}
+.msg{font-size:13.5px;margin-top:10px;display:none}
+.msg.err{display:block;color:var(--red)}
+.msg.ok{display:block;color:var(--green)}
+.accounts{display:grid;gap:10px;margin-top:12px}
+.acct{display:flex;align-items:center;gap:12px;background:var(--ink);border:1px solid var(--line);border-radius:12px;padding:12px 14px;cursor:pointer;text-align:left;color:var(--text);font:inherit;width:100%}
+.acct:hover,.acct.sel{border-color:var(--amber)}
+.acct img{width:40px;height:40px;border-radius:50%;background:var(--line)}
+.acct .u{font-weight:600}.acct .id{font:500 11.5px 'JetBrains Mono',monospace;color:var(--dim)}
+.kv{display:flex;gap:8px;align-items:center;margin-bottom:8px}
+.kv code{flex:1;background:var(--ink);border:1px solid var(--line);border-radius:8px;padding:9px 12px;font:500 12px 'JetBrains Mono',monospace;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.kv button{padding:9px 14px;font-size:13px}
+.note{background:rgba(247,179,43,.1);border:1px solid var(--line);border-left:3px solid var(--amber);border-radius:10px;padding:11px 14px;font-size:13px;color:var(--text);margin-top:12px}
+</style></head><body><div class="wrap">
+<header><h1>Connect <em>Instagram</em></h1><a class="back" href="index.html">← Dashboard</a></header>
+<p class="lead">4 steps — token lo, account choose karo, long-lived banao, save karo. Sab kuch aapke browser mein hota hai; token kahin aur nahi jata.</p>
+
+<section class="step active" id="s1">
+<h2><span class="n">1</span> Access token paste karo</h2>
+<p class="hint"><a href="https://developers.facebook.com/tools/explorer/" target="_blank" rel="noopener">Graph API Explorer</a> kholo → apni app select karo → permissions: <code style="font-size:12px">instagram_basic, instagram_content_publish, pages_show_list, business_management</code> → Generate Access Token → yahan paste karo.</p>
+<textarea id="token" placeholder="EAAG…" autocomplete="off"></textarea>
+<button id="b1">Account detect karo</button>
+<p class="msg" id="m1"></p>
+</section>
+
+<section class="step" id="s2">
+<h2><span class="n">2</span> Apna Instagram account choose karo</h2>
+<p class="hint">Ye wo Business/Creator accounts hain jo aapke Facebook Pages se linked hain.</p>
+<div class="accounts" id="accts"></div>
+<p class="msg" id="m2"></p>
+</section>
+
+<section class="step" id="s3">
+<h2><span class="n">3</span> Long-lived token banao <span style="font:400 12px Inter;color:var(--dim)">(60 din chalta hai)</span></h2>
+<p class="hint">App ID aur App Secret Meta app ke <b>Settings → Basic</b> se lo. Secret sirf isi browser mein use hota hai, kahin store nahi hota.</p>
+<input id="appid" placeholder="App ID" autocomplete="off">
+<input id="appsecret" placeholder="App Secret" type="password" autocomplete="off">
+<button id="b3">Exchange karo</button>
+<p class="msg" id="m3"></p>
+</section>
+
+<section class="step" id="s4">
+<h2><span class="n">4</span> Save karo</h2>
+<p class="hint">Ye values GitHub repo → <b>Settings → Secrets and variables → Actions</b> mein daalo (naam bilkul same rakhna):</p>
+<div class="kv"><code id="v_id">IG_USER_ID</code><button class="ghost" data-copy="v_id">Copy</button></div>
+<div class="kv"><code id="v_tok">IG_ACCESS_TOKEN</code><button class="ghost" data-copy="v_tok">Copy</button></div>
+<button id="b4">Is browser mein bhi save karo (live status ke liye)</button>
+<p class="msg" id="m4"></p>
+<div class="note">💡 Browser-save se dashboard par live account status + real-time followers dikhte hain — sirf isi device par. GitHub Secrets wala step automation ke liye zaroori hai, wo mat chhorna. Token ~50 din baad expire hoga; yahi wizard dobara chala lena.</div>
+</section>
+
+<script>
+var G='https://graph.facebook.com/v21.0';
+var state={token:'',igId:'',igUser:'',longToken:''};
+function $(id){return document.getElementById(id)}
+function show(el,cls,txt){el.className='msg '+cls;el.textContent=txt}
+function activate(id){var s=$(id);s.classList.add('active');s.scrollIntoView({behavior:'smooth',block:'center'})}
+function done(id){$(id).classList.add('done')}
+function gget(path,params,cb){
+  var q=Object.keys(params).map(function(k){return k+'='+encodeURIComponent(params[k])}).join('&');
+  fetch(G+'/'+path+'?'+q).then(function(r){return r.json()}).then(cb)
+    .catch(function(e){cb({error:{message:'Network error: '+e.message}})});
+}
+
+$('b1').onclick=function(){
+  var t=$('token').value.trim();
+  if(!t){show($('m1'),'err','Pehle token paste karo.');return}
+  $('b1').disabled=true;show($('m1'),'ok','Checking…');
+  gget('me/accounts',{fields:'name,instagram_business_account{id,username,profile_picture_url,followers_count}',access_token:t},function(r){
+    $('b1').disabled=false;
+    if(r.error){show($('m1'),'err','Token issue: '+r.error.message);return}
+    var pages=(r.data||[]).filter(function(p){return p.instagram_business_account});
+    if(!pages.length){show($('m1'),'err','Koi linked Instagram Business account nahi mila. IG app mein: Settings → Business tools → Connect a Facebook Page.');return}
+    state.token=t;show($('m1'),'ok','Token theek hai ✓');done('s1');
+    var box=$('accts');box.innerHTML='';
+    pages.forEach(function(p){
+      var ig=p.instagram_business_account;
+      var b=document.createElement('button');b.className='acct';
+      b.innerHTML='<img src="'+(ig.profile_picture_url||'')+'" alt="" onerror="this.style.visibility=\'hidden\'">'
+        +'<span><span class="u">@'+ig.username+'</span> · '+(ig.followers_count||0)+' followers'
+        +'<br><span class="id">ID: '+ig.id+'</span></span>';
+      b.onclick=function(){
+        Array.prototype.forEach.call(document.querySelectorAll('.acct'),function(x){x.classList.remove('sel')});
+        b.classList.add('sel');state.igId=ig.id;state.igUser=ig.username;
+        show($('m2'),'ok','@'+ig.username+' selected ✓');done('s2');activate('s3');
+      };
+      box.appendChild(b);
+    });
+    activate('s2');
+  });
+};
+
+$('b3').onclick=function(){
+  var id=$('appid').value.trim(),sec=$('appsecret').value.trim();
+  if(!id||!sec){show($('m3'),'err','App ID aur Secret dono chahiye.');return}
+  $('b3').disabled=true;show($('m3'),'ok','Exchanging…');
+  gget('oauth/access_token',{grant_type:'fb_exchange_token',client_id:id,client_secret:sec,fb_exchange_token:state.token},function(r){
+    $('b3').disabled=false;
+    if(r.error){show($('m3'),'err','Exchange fail: '+r.error.message);return}
+    state.longToken=r.access_token;
+    show($('m3'),'ok','Long-lived token ban gaya ✓ (~60 din valid)');done('s3');
+    $('v_id').textContent=state.igId;$('v_tok').textContent=state.longToken;
+    activate('s4');
+  });
+};
+
+Array.prototype.forEach.call(document.querySelectorAll('[data-copy]'),function(b){
+  b.onclick=function(){
+    var el=$(b.getAttribute('data-copy'));
+    navigator.clipboard.writeText(el.textContent).then(function(){
+      var o=b.textContent;b.textContent='Copied ✓';setTimeout(function(){b.textContent=o},1400);
+    });
+  };
+});
+
+$('b4').onclick=function(){
+  if(!state.igId||!state.longToken){show($('m4'),'err','Pehle steps 1–3 complete karo.');return}
+  try{
+    localStorage.setItem('ig_autopilot',JSON.stringify({igId:state.igId,token:state.longToken,user:state.igUser,saved:Date.now()}));
+    show($('m4'),'ok','Saved ✓ — dashboard ab live status dikhayega. GitHub Secrets bhi zaroor update karo!');done('s4');
+  }catch(e){show($('m4'),'err','Save nahi hua: '+e.message)}
+};
+</script>
+</div></body></html>
