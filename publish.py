@@ -63,7 +63,9 @@ def publish_image(image_url, caption, alt_text=""):
         "image_url": image_url, "caption": caption,
         "alt_text": alt_text, "access_token": TOKEN})
     r.raise_for_status()
-    return _publish(r.json()["id"])
+    cid = r.json()["id"]
+    _wait_ready(cid)
+    return _publish(cid)
 
 
 def publish_reel(video_url, caption):
