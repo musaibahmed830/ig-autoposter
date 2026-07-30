@@ -15,7 +15,7 @@ import os, json, time, hashlib, requests
 
 HERE = os.path.dirname(__file__)
 OUT = os.path.join(HERE, "out")
-GRAPH = "https://graph.facebook.com/v21.0"
+GRAPH = "https://graph.instagram.com/v21.0"
 
 IG_ID = os.environ["IG_USER_ID"]
 TOKEN = os.environ["IG_ACCESS_TOKEN"]
