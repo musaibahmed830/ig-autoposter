@@ -30,10 +30,10 @@ Write Instagram content in {lang}. Respond with ONLY a JSON object, no markdown 
 - "slides": array of exactly {n} strings, each under 9 words, matching today's format (slide 1 = hook, last slide = CTA).
 """
     resp = client.models.generate_content(
-        model="gemini-2.5-flash",
+        model="gemini-flash-latest",
         contents=prompt,
         config=types.GenerateContentConfig(
-            max_output_tokens=1400,
+            max_output_tokens=3000,
             response_mime_type="application/json",
         ),
     )

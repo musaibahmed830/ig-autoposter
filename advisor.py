@@ -61,13 +61,13 @@ def research_tips():
         from google.genai import types
         client = genai.Client(api_key=os.environ["GEMINI_API_KEY"])
         resp = client.models.generate_content(
-            model="gemini-2.5-flash",
+            model="gemini-flash-latest",
             contents=(
                 "Search the web for the CURRENT best tactics (this month) to increase Instagram Reels "
                 "reach for a small business account. Then respond with ONLY a JSON array of 5 short, "
                 "specific, actionable tips (each under 25 words). No markdown fences."),
             config=types.GenerateContentConfig(
-                max_output_tokens=1500,
+                max_output_tokens=3000,
                 tools=[types.Tool(google_search=types.GoogleSearch())],
             ),
         )
