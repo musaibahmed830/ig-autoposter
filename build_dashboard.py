@@ -93,6 +93,11 @@ def build():
     chart = spark_svg(reel_reach[-14:] if reel_reach else [])
     updated = an.get("updated", "")[:16].replace("T", " ")
     followers = fmt(an.get("account", {}).get("followers", 0))
+    ig_username = an.get("account", {}).get("username", "")
+    if ig_username:
+        ig_status_html = f'<span id="igstatus" class="pill live">● @{html.escape(ig_username)} · live</span>'
+    else:
+        ig_status_html = '<a id="igstatus" class="pill" href="connect.html">Connect Instagram →</a>'
 
     page = f'''<!doctype html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -143,7 +148,7 @@ footer {{ color:var(--dim); font-size:12px; margin-top:22px; text-align:center; 
 @media (prefers-reduced-motion:no-preference) {{ .hero svg path {{ transition:d .4s; }} }}
 </style></head><body><div class="wrap">
 <header><h1>{html.escape(brand)} <em>· Autopilot</em></h1>
-<div class="hright"><a id="igstatus" class="pill" href="connect.html">Connect Instagram →</a><span class="sub">Updated {updated} UTC</span></div></header>
+<div class="hright">{ig_status_html}<span class="sub">Updated {updated} UTC</span></div></header>
 {manual_banner}
 <section class="hero"><div class="hero-top"><h2>Reel reach — last 14 din</h2><span class="chip">{chip_label}</span></div>{chart}</section>
 <section class="cards">
@@ -158,25 +163,8 @@ footer {{ color:var(--dim); font-size:12px; margin-top:22px; text-align:center; 
 <thead><tr><th>Din / Topic</th><th>Format</th><th class="num-h">Reel views</th><th class="num-h">Reel reach</th>
 <th class="num-h">Likes</th><th class="num-h">Saves</th><th class="num-h">Shares</th><th class="num-h">Post reach</th></tr></thead>
 <tbody>{rows}</tbody></table></section>
-<footer>Auto-generated daily · Official Instagram Graph API · <a href="connect.html" style="color:var(--dim)">Connection settings</a></footer>
+<footer>Auto-generated daily · Official Instagram Graph API</footer>
 </div>
-<script>
-(function(){{
-  var el=document.getElementById('igstatus');
-  var raw=localStorage.getItem('ig_autopilot'); if(!raw)return;
-  var cfg; try{{cfg=JSON.parse(raw)}}catch(e){{return}}
-  var days=(Date.now()-(cfg.saved||0))/86400000;
-  fetch('https://graph.instagram.com/v21.0/'+cfg.igId+'?fields=username,followers_count&access_token='+encodeURIComponent(cfg.token))
-    .then(function(r){{return r.json()}})
-    .then(function(d){{
-      if(d.error){{el.textContent='⚠ Token expired — reconnect';el.classList.add('warn');return}}
-      el.textContent='● @'+d.username+' · live';el.classList.add('live');
-      var v=document.querySelector('.cards .card .v');
-      if(v&&d.followers_count!=null){{v.textContent=d.followers_count>=1000?(d.followers_count/1000).toFixed(1)+'K':d.followers_count}}
-      if(days>45){{el.textContent='● @'+d.username+' · token '+Math.round(60-days)+' din mein expire';el.classList.remove('live');el.classList.add('warn')}}
-    }}).catch(function(){{}});
-}})();
-</script>
 </body></html>'''
 
     os.makedirs(DOCS, exist_ok=True)

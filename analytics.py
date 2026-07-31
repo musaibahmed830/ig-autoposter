@@ -7,7 +7,7 @@ Results analytics.json mein — dashboard yahan se parhta hai.
 import os, json, datetime, requests
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-GRAPH = "https://graph.facebook.com/v21.0"
+GRAPH = "https://graph.instagram.com/v21.0"
 TOKEN = os.environ["IG_ACCESS_TOKEN"]
 IG_ID = os.environ["IG_USER_ID"]
 
@@ -29,9 +29,10 @@ def media_insights(media_id, metrics):
 
 def account_snapshot():
     r = requests.get(f"{GRAPH}/{IG_ID}",
-                     params={"fields": "followers_count,media_count", "access_token": TOKEN},
+                     params={"fields": "username,followers_count,media_count", "access_token": TOKEN},
                      timeout=60).json()
-    return {"followers": r.get("followers_count", 0), "media_count": r.get("media_count", 0)}
+    return {"username": r.get("username", ""), "followers": r.get("followers_count", 0),
+            "media_count": r.get("media_count", 0)}
 
 
 def main():
