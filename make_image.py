@@ -3,14 +3,27 @@ Branded images — 3 layouts x 5 palettes rotate hote hain (variety plan se):
 - center:    text center, accent underline
 - left_band: left side accent band, text left-aligned
 - boxed:     accent-border box ke andar text
+Feed post (post.jpg) ke liye Pollinations.ai (free, no key) se ek AI hero
+background banta hai — laptop/phone mockup + isometric icons — text uske
+upar bottom-scrim ke saath overlay hota hai. Carousel/reel slides fast aur
+consistent rehne ke liye purane flat-gradient style mein hi rehte hain.
 """
-import os, json, textwrap
-from PIL import Image, ImageDraw, ImageFont
+import io, os, json, textwrap, urllib.parse
+import requests
+from PIL import Image, ImageDraw, ImageFont, ImageOps
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(HERE, "out")
 FONT_BOLD = "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
 FONT_REG = "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"
+
+PALETTE_MOOD = {
+    "midnight_amber":     "dark navy background, warm amber gold glowing accents",
+    "plum_orchid":        "deep plum purple background, glowing orchid pink accents",
+    "forest_mint":        "dark forest green background, glowing mint green accents",
+    "espresso_tangerine": "dark espresso brown background, glowing tangerine orange accents",
+    "deep_teal_sky":      "deep teal background, glowing sky blue accents",
+}
 
 
 def _hex(c):
@@ -31,6 +44,60 @@ def _gradient(w, h, top, bottom, accent):
         r = y / h
         img.paste(tuple(int(t[i]+(b[i]-t[i])*r) for i in range(3)), (0, y, w, y+1))
     return img
+
+
+def _apply_scrim(img, top_frac=0.5, max_alpha=235):
+    """Bottom-up dark gradient overlay — AI background ke upar text readable rakhne ke liye."""
+    w, h = img.size
+    overlay = Image.new("RGBA", (w, h), (0, 0, 0, 0))
+    start_y = int(h * top_frac)
+    for y in range(start_y, h):
+        a = int(max_alpha * (y - start_y) / (h - start_y))
+        overlay.paste((0, 0, 0, a), (0, y, w, y + 1))
+    return Image.alpha_composite(img.convert("RGBA"), overlay).convert("RGB")
+
+
+def ai_hero_background(plan, w, h):
+    """Pollinations.ai (free, no API key) se professional tech marketing background."""
+    mood = PALETTE_MOOD.get(plan["palette"], "dark navy background, warm amber gold glowing accents")
+    niche = os.environ.get("NICHE", "software house")
+    prompt = (f"modern professional instagram marketing graphic for a {niche}, {mood}, "
+              f"sleek laptop or phone mockup with a dashboard UI, small 3d isometric tech icons, "
+              f"clean minimal corporate branding style, high quality, no text, no watermark, no logo")
+    seed = abs(hash(plan["date"])) % 100000
+    url = ("https://image.pollinations.ai/prompt/" + urllib.parse.quote(prompt)
+           + f"?width={w}&height={h}&nologo=true&seed={seed}")
+    r = requests.get(url, timeout=45)
+    r.raise_for_status()
+    img = Image.open(io.BytesIO(r.content)).convert("RGB")
+    return ImageOps.fit(img, (w, h), Image.LANCZOS)
+
+
+def hero_render(text, w, h, path, plan):
+    """Feed post (post.jpg): AI background + bottom scrim + headline. AI fail ho to flat gradient fallback."""
+    bg, accent = plan["bg"], plan["accent"]
+    brand = os.environ.get("BRAND_NAME", "My Brand")
+    try:
+        img = ai_hero_background(plan, w, h)
+        img = _apply_scrim(img, top_frac=0.48)
+    except Exception as e:
+        print(f"AI background fail hua ({e}) — flat gradient use kar raha hoon.")
+        img = _gradient(w, h, bg, _darker(bg, 0.75), accent)
+
+    d = ImageDraw.Draw(img)
+    size = int(w * 0.066)
+    font = ImageFont.truetype(FONT_BOLD, size)
+    bfont = ImageFont.truetype(FONT_REG, int(w * 0.032))
+    line_h = int(size * 1.22)
+
+    lines = textwrap.wrap(text, width=20)
+    y = h - int(h * 0.15) - line_h * len(lines)
+    for line in lines:
+        d.text((w * 0.08, y), line, font=font, fill="#ffffff"); y += line_h
+
+    d.rectangle([w*0.08, y+18, w*0.08+180, y+27], fill=accent)
+    d.text((w*0.08, h - int(w*0.075)), brand, font=bfont, fill=accent)
+    img.save(path, "JPEG", quality=92)
 
 
 def render(text, w, h, path, plan, slide_no=None, total=None):
@@ -82,7 +149,7 @@ def main():
     with open(os.path.join(OUT, "content.json")) as f:
         c = json.load(f)
     slides = c["slides"]
-    render(slides[0], 1080, 1350, os.path.join(OUT, "post.jpg"), c)
+    hero_render(slides[0], 1080, 1350, os.path.join(OUT, "post.jpg"), c)
     for i, s in enumerate(slides, 1):
         render(s, 1080, 1920, os.path.join(OUT, f"slide_{i}.jpg"), c, i, len(slides))
     print(f"Images ready — layout={c['layout']}, palette={c['palette']}")
