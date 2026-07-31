@@ -42,7 +42,8 @@ def save_history(h):
 
 
 def todays_plan(date=None):
-    """Aaj ka plan: topic (no recent repeat) + style + palette + layout + transition."""
+    """Aaj ka plan: topic (no recent repeat) + style + palette + layout + transition.
+    MANUAL_TOPIC env var set ho to us custom topic se manual post banta hai (auto-rotation skip)."""
     date = date or datetime.date.today()
     with open(os.path.join(HERE, "topics.json")) as f:
         topics = json.load(f)
@@ -52,8 +53,12 @@ def todays_plan(date=None):
     recent_styles = [p.get("style") for p in hist["posted"][-3:]]  # 3 din same style nahi
 
     rng = random.Random(date.toordinal())
-    fresh = [t for t in topics if t not in recent_topics] or topics
-    topic = rng.choice(fresh)
+    manual_topic = os.environ.get("MANUAL_TOPIC", "").strip()
+    if manual_topic:
+        topic = manual_topic
+    else:
+        fresh = [t for t in topics if t not in recent_topics] or topics
+        topic = rng.choice(fresh)
 
     styles = [s for s in CONTENT_STYLES if s[0] not in recent_styles] or CONTENT_STYLES
     style = rng.choice(styles)

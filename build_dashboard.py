@@ -148,7 +148,7 @@ footer {{ color:var(--dim); font-size:12px; margin-top:22px; text-align:center; 
 @media (prefers-reduced-motion:no-preference) {{ .hero svg path {{ transition:d .4s; }} }}
 </style></head><body><div class="wrap">
 <header><h1>{html.escape(brand)} <em>· Autopilot</em></h1>
-<div class="hright">{ig_status_html}<span class="sub">Updated {updated} UTC</span></div></header>
+<div class="hright">{ig_status_html}<a class="pill" href="https://github.com/musaibahmed830/ig-autoposter/actions/workflows/daily.yml" target="_blank" rel="noopener">✎ Manual post →</a><span class="sub">Updated {updated} UTC</span></div></header>
 {manual_banner}
 <section class="hero"><div class="hero-top"><h2>Reel reach — last 14 din</h2><span class="chip">{chip_label}</span></div>{chart}</section>
 <section class="cards">
