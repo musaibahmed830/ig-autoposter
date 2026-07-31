@@ -1,8 +1,9 @@
 {
-  "updated": "2026-07-30T20:44:06.448772Z",
+  "updated": "2026-07-31T06:45:50.457168Z",
   "account": {
+    "username": "technova.solutions",
     "followers": 0,
-    "media_count": 0
+    "media_count": 2
   },
   "media": [
     {
@@ -10,10 +11,16 @@
       "topic": "How often should a brand really post?",
       "style": "question_hook",
       "post": {
-        "error": "Invalid OAuth access token - Cannot parse access token"
+        "error": "Unsupported get request. Object with ID '18000947021972864' does not exist, cannot be loaded due to missing permissions, or does not support this operation"
       },
       "reel": {
-        "error": "Invalid OAuth access token - Cannot parse access token"
+        "views": 35,
+        "reach": 35,
+        "likes": 0,
+        "comments": 0,
+        "saved": 0,
+        "shares": 0,
+        "ig_reels_avg_watch_time": 2581
       }
     }
   ]
