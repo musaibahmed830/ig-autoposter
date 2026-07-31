@@ -166,7 +166,7 @@ footer {{ color:var(--dim); font-size:12px; margin-top:22px; text-align:center; 
   var raw=localStorage.getItem('ig_autopilot'); if(!raw)return;
   var cfg; try{{cfg=JSON.parse(raw)}}catch(e){{return}}
   var days=(Date.now()-(cfg.saved||0))/86400000;
-  fetch('https://graph.facebook.com/v21.0/'+cfg.igId+'?fields=username,followers_count&access_token='+encodeURIComponent(cfg.token))
+  fetch('https://graph.instagram.com/v21.0/'+cfg.igId+'?fields=username,followers_count&access_token='+encodeURIComponent(cfg.token))
     .then(function(r){{return r.json()}})
     .then(function(d){{
       if(d.error){{el.textContent='⚠ Token expired — reconnect';el.classList.add('warn');return}}

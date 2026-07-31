@@ -17,25 +17,27 @@ Roz automatically **1 feed post + 1 reel** — official Instagram Graph API se (
 1. Instagram par account banao (mobile app se, apne asli phone/SIM se — VPN ke baghair)
 2. **1-2 hafte warm-up karo**: profile complete karo, 3-4 manual posts, stories, kuch accounts follow karo. Naya account + turant automation unnatural lagta hai.
 3. Settings → Account type → **Switch to Professional → Business**
-4. Facebook par ek **Page** banao (brand ke naam se) aur IG account ko us Page se **link** karo (IG Settings → Business tools → Connect a Facebook Page)
 
-## Step 2 — Meta Developer app
+## Step 2 — Meta Developer app (Instagram API with Instagram Login)
 
-1. https://developers.facebook.com → **Create App** → type: **Business**
-2. App mein **Instagram Graph API** product add karo
-3. **Graph API Explorer** (Tools menu) kholo:
-   - Apni app select karo
-   - Permissions add karo: `instagram_basic`, `instagram_content_publish`, `pages_show_list`, `business_management`
-   - **Generate Access Token** → apna FB account/Page authorize karo
-4. **IG_USER_ID nikalo**: Explorer mein query chalao:
-   - `me/accounts` → apne Page ka `id` copy karo
-   - `{page-id}?fields=instagram_business_account` → jo `id` mile wohi **IG_USER_ID** hai
+Facebook Page linking **zaroori nahi** — ye newer flow seedha Instagram account se connect hota hai.
+
+1. https://developers.facebook.com/apps/ → **Create App** → type: **Business**
+2. App mein **Instagram** product add karo → **API setup with Instagram login**
+3. Us page par:
+   - Permissions: `instagram_business_basic`, `instagram_business_content_publish`
+   - **Generate access token** → apna Instagram account authorize karo → token milega (`IGAA…` se start hoga) — yehi **IG_ACCESS_TOKEN** (short-lived)
+4. **IG_USER_ID nikalo**: browser mein ya curl se query chalao:
+   ```
+   https://graph.instagram.com/v21.0/me?fields=id,username&access_token={SHORT_TOKEN}
+   ```
+   Response ka `id` = **IG_USER_ID**
 5. **Long-lived token banao** (60 din chalta hai):
    ```
-   https://graph.facebook.com/v21.0/oauth/access_token?grant_type=fb_exchange_token&client_id={APP_ID}&client_secret={APP_SECRET}&fb_exchange_token={SHORT_TOKEN}
+   https://graph.instagram.com/v21.0/access_token?grant_type=ig_exchange_token&client_secret={INSTAGRAM_APP_SECRET}&access_token={SHORT_TOKEN}
    ```
-   Response ka `access_token` = **IG_ACCESS_TOKEN**
-   (Har ~50 din baad yahi call dobara chala ke refresh kar lena — reminder laga lo)
+   Response ka `access_token` = **IG_ACCESS_TOKEN** (long-lived)
+   (Har ~50 din baad refresh karna — `grant_type=ig_refresh_token&access_token={LONG_TOKEN}` se — reminder laga lo)
 
 ## Step 3 — Cloudinary (free)
 
@@ -132,10 +134,10 @@ YouTube Audio Library se lo. Copyrighted track = reel mute/block risk).
 Ab token/ID ka setup dashboard se hi hota hai — `connect.html`:
 
 1. Dashboard kholo → upar right mein **"Connect Instagram →"** button
-2. Wizard 4 steps mein le jata hai:
-   - Graph API Explorer se token paste karo (link wizard mein hai)
-   - Wizard aapke linked IG Business accounts **khud detect** kar ke dikhata hai (photo + followers ke saath) — click kar ke choose karo
-   - App ID + Secret daalo → wizard **long-lived token khud bana deta hai**
+2. Wizard 3 steps mein le jata hai (Instagram API with Instagram Login flow — koi Facebook Page linking nahi chahiye):
+   - Meta Developer app → Instagram → API setup with Instagram login se token paste karo (link wizard mein hai)
+   - Wizard token se aapka account **khud detect** kar ke dikhata hai (photo + followers ke saath)
+   - Instagram App Secret daalo → wizard **long-lived token khud bana deta hai**
    - Copy buttons se dono values GitHub Secrets mein daalo + "Is browser mein save karo" dabao
 3. Browser-save ke baad dashboard par **live status** dikhta hai: `● @yourhandle · live` (green),
    real-time followers, aur token expire hone se pehle **warning** (45 din ke baad amber ho jata hai)
