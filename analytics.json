@@ -1,9 +1,9 @@
 {
-  "updated": "2026-07-31T06:51:16.068713Z",
+  "updated": "2026-07-31T10:44:07.942995Z",
   "account": {
     "username": "technova.solutions",
     "followers": 0,
-    "media_count": 2
+    "media_count": 8
   },
   "media": [
     {
@@ -21,6 +21,82 @@
         "saved": 0,
         "shares": 0,
         "ig_reels_avg_watch_time": 2581
+      }
+    },
+    {
+      "date": "2026-07-31",
+      "topic": "The real cost of NOT having a mobile app for your business in 2026",
+      "style": "how_to",
+      "post": {
+        "error": "Unsupported get request. Object with ID '18183353791366155' does not exist, cannot be loaded due to missing permissions, or does not support this operation"
+      },
+      "reel": {
+        "views": 0,
+        "reach": 0,
+        "likes": 0,
+        "comments": 0,
+        "saved": 0,
+        "shares": 0,
+        "ig_reels_avg_watch_time": 12949
+      }
+    },
+    {
+      "date": "2026-07-31",
+      "topic": "The real cost of NOT having a mobile app for your business in 2026",
+      "style": "hot_take",
+      "post": {
+        "reach": 0,
+        "likes": 0,
+        "comments": 0,
+        "saved": 0,
+        "shares": 0
+      },
+      "reel": {
+        "views": 0,
+        "reach": 0,
+        "likes": 0,
+        "comments": 0,
+        "saved": 0,
+        "shares": 0,
+        "ig_reels_avg_watch_time": 6181
+      }
+    },
+    {
+      "date": "2026-07-31",
+      "topic": "5 signs your website is costing you customers instead of getting them",
+      "style": "stat_shock",
+      "post": {
+        "reach": 0,
+        "likes": 0,
+        "comments": 0,
+        "saved": 0,
+        "shares": 0
+      },
+      "reel": {
+        "views": 3,
+        "reach": 3,
+        "likes": 0,
+        "comments": 0,
+        "saved": 0,
+        "shares": 0,
+        "ig_reels_avg_watch_time": 4182
+      }
+    },
+    {
+      "date": "2026-07-31",
+      "topic": "Why your first 3 words decide everything",
+      "style": "mini_story",
+      "post": {
+        "error": "Unsupported get request. Object with ID '18109295239824793' does not exist, cannot be loaded due to missing permissions, or does not support this operation"
+      },
+      "reel": {
+        "views": 0,
+        "reach": 0,
+        "likes": 1,
+        "comments": 0,
+        "saved": 0,
+        "shares": 0,
+        "ig_reels_avg_watch_time": 30981
       }
     }
   ]
