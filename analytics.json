@@ -1,9 +1,9 @@
 {
-  "updated": "2026-07-31T10:44:07.942995Z",
+  "updated": "2026-08-01T10:03:14.033064Z",
   "account": {
     "username": "technova.solutions",
     "followers": 0,
-    "media_count": 8
+    "media_count": 16
   },
   "media": [
     {
@@ -37,7 +37,7 @@
         "comments": 0,
         "saved": 0,
         "shares": 0,
-        "ig_reels_avg_watch_time": 12949
+        "ig_reels_avg_watch_time": 5294
       }
     },
     {
@@ -73,13 +73,13 @@
         "shares": 0
       },
       "reel": {
-        "views": 3,
-        "reach": 3,
+        "views": 18,
+        "reach": 17,
         "likes": 0,
         "comments": 0,
         "saved": 0,
         "shares": 0,
-        "ig_reels_avg_watch_time": 4182
+        "ig_reels_avg_watch_time": 2089
       }
     },
     {
@@ -90,13 +90,97 @@
         "error": "Unsupported get request. Object with ID '18109295239824793' does not exist, cannot be loaded due to missing permissions, or does not support this operation"
       },
       "reel": {
-        "views": 0,
-        "reach": 0,
+        "views": 126,
+        "reach": 118,
         "likes": 1,
         "comments": 0,
         "saved": 0,
         "shares": 0,
-        "ig_reels_avg_watch_time": 30981
+        "ig_reels_avg_watch_time": 1779
+      }
+    },
+    {
+      "date": "2026-07-31",
+      "topic": "Saves and shares: the metrics IG rewards most",
+      "style": "how_to",
+      "post": {
+        "reach": 0,
+        "likes": 0,
+        "comments": 0,
+        "saved": 0,
+        "shares": 0
+      },
+      "reel": {
+        "views": 0,
+        "reach": 0,
+        "likes": 0,
+        "comments": 0,
+        "saved": 0,
+        "shares": 0,
+        "ig_reels_avg_watch_time": 30954
+      }
+    },
+    {
+      "date": "2026-07-31",
+      "topic": "The biggest myth about custom software being too expensive",
+      "style": "hot_take",
+      "post": {
+        "reach": 0,
+        "likes": 0,
+        "comments": 0,
+        "saved": 0,
+        "shares": 0
+      },
+      "reel": {
+        "views": 15,
+        "reach": 14,
+        "likes": 0,
+        "comments": 0,
+        "saved": 0,
+        "shares": 0,
+        "ig_reels_avg_watch_time": 2063
+      }
+    },
+    {
+      "date": "2026-08-01",
+      "topic": "How UI/UX design directly affects sales",
+      "style": "quick_tips",
+      "post": {
+        "reach": 0,
+        "likes": 0,
+        "comments": 0,
+        "saved": 0,
+        "shares": 0
+      },
+      "reel": {
+        "views": 0,
+        "reach": 0,
+        "likes": 0,
+        "comments": 0,
+        "saved": 0,
+        "shares": 0,
+        "ig_reels_avg_watch_time": 0
+      }
+    },
+    {
+      "date": "2026-08-01",
+      "topic": "Why app maintenance matters as much as app launch",
+      "style": "myth_bust",
+      "post": {
+        "reach": 0,
+        "likes": 0,
+        "comments": 0,
+        "saved": 0,
+        "shares": 0
+      },
+      "reel": {
+        "views": 0,
+        "reach": 0,
+        "likes": 0,
+        "comments": 0,
+        "saved": 0,
+        "shares": 0,
+        "ig_reels_avg_watch_time": 0
       }
     }
   ]

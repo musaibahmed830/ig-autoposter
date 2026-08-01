@@ -1,7 +1,10 @@
 {
-  "date": "2026-07-31",
-  "status": "warming_up",
-  "verdict": "Data jama ho raha hai — kam az kam 6 din ke baad trend milega.",
+  "date": "2026-08-01",
+  "status": "growing",
+  "avg_recent": 21,
+  "avg_prev": 18,
+  "change_pct": 21.6,
   "manual_audio_day": false,
-  "tips": []
+  "tips": [],
+  "verdict": "Reach barh raha hai (+22%) — strategy kaam kar rahi hai, continue!"
 }
