@@ -65,10 +65,12 @@ def ai_hero_background(plan, w, h, variant=0):
     upscale ka softness compensate karte hain."""
     mood = PALETTE_MOOD.get(plan["palette"], "dark navy background, warm amber gold glowing accents")
     niche = os.environ.get("NICHE", "software house")
-    prompt = (f"modern professional instagram marketing graphic for a {niche}, {mood}, "
-              f"sleek laptop or phone mockup with a dashboard UI, small 3d isometric tech icons, "
-              f"clean minimal corporate branding style, sharp focus, highly detailed, crisp render, "
-              f"high quality, no text, no watermark, no logo")
+    prompt = (f"modern 3d isometric product render for a {niche}, {mood}, "
+              f"sleek closed or angled laptop silhouette with a plain glowing empty screen, "
+              f"small floating isometric tech icons like gears code brackets mobile phone cloud "
+              f"chart bars around it, minimal background with negative space, clean corporate "
+              f"branding style, sharp focus, highly detailed, no screen interface, no UI, "
+              f"no readable text, no words, no letters, no logo, no watermark")
     seed = (abs(hash(plan["date"])) + variant * 7919) % 100000
     url = ("https://image.pollinations.ai/prompt/" + urllib.parse.quote(prompt)
            + f"?width={w}&height={h}&nologo=true&seed={seed}")
