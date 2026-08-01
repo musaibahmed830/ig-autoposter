@@ -28,6 +28,9 @@ Write Instagram content in {lang}. Respond with ONLY a JSON object, no markdown 
 - "hashtags": array of exactly 15 hashtags (no #): mix niche + topic + {city}/local. Small-to-medium tags, not only huge ones.
 - "alt_text": one sentence image description with 1-2 keywords (under 100 chars).
 - "slides": array of exactly {n} strings, each under 9 words, matching today's format (slide 1 = hook, last slide = CTA).
+- "headline_small": 2-5 word lead-in phrase for the poster headline (e.g. "YOUR WEBSITE" or "BUILD A RELIABLE").
+- "headline_big": 1-4 word punchy takeaway that completes the headline_small phrase, this is the big bold hero word(s) (e.g. "REIMAGINED" or "IT FOUNDATION").
+- "panel_text": one short punchy sentence (under 14 words) summarizing the value prop, for a highlighted info box on the image.
 """
     resp = client.models.generate_content(
         model="gemini-flash-latest",
@@ -40,6 +43,9 @@ Write Instagram content in {lang}. Respond with ONLY a JSON object, no markdown 
     data = json.loads(resp.text.replace("```json", "").replace("```", "").strip())
     data["hashtags"] = data.get("hashtags", [])[:15]
     data["slides"] = (data.get("slides", []) + [plan["topic"]] * n)[:n]
+    data.setdefault("headline_small", "")
+    data.setdefault("headline_big", plan["topic"])
+    data.setdefault("panel_text", data["slides"][0])
     data.update(plan)
     return data
 
