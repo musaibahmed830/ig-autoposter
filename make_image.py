@@ -65,12 +65,15 @@ def ai_hero_background(plan, w, h, variant=0):
     upscale ka softness compensate karte hain."""
     mood = PALETTE_MOOD.get(plan["palette"], "dark navy background, warm amber gold glowing accents")
     niche = os.environ.get("NICHE", "software house")
-    prompt = (f"modern 3d isometric product render for a {niche}, {mood}, "
-              f"sleek closed or angled laptop silhouette with a plain glowing empty screen, "
-              f"small floating isometric tech icons like gears code brackets mobile phone cloud "
-              f"chart bars around it, minimal background with negative space, clean corporate "
-              f"branding style, sharp focus, highly detailed, no screen interface, no UI, "
-              f"no readable text, no words, no letters, no logo, no watermark")
+    # "laptop/phone" mockups is free model se anatomically galat (stretched, doubled
+    # screens) ban rahe the — is liye ab sirf abstract geometric/isometric shapes
+    # maangte hain jo consistently sahi aur sharp render hoti hain.
+    prompt = (f"abstract 3d isometric tech illustration representing a {niche}, {mood}, "
+              f"floating geometric shapes, glowing circuit lines, isometric icons like gears, "
+              f"code brackets, cloud, chart bars, connected nodes, minimal dark background with "
+              f"lots of negative space, clean corporate branding style, sharp focus, highly "
+              f"detailed render, no screens, no laptop, no phone, no devices, no readable text, "
+              f"no words, no letters, no logo, no watermark")
     seed = (abs(hash(plan["date"])) + variant * 7919) % 100000
     url = ("https://image.pollinations.ai/prompt/" + urllib.parse.quote(prompt)
            + f"?width={w}&height={h}&nologo=true&seed={seed}")
