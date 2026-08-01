@@ -10,7 +10,7 @@ consistent rehne ke liye purane flat-gradient style mein hi rehte hain.
 """
 import io, os, json, textwrap, urllib.parse
 import requests
-from PIL import Image, ImageDraw, ImageFont, ImageOps
+from PIL import Image, ImageDraw, ImageFont, ImageOps, ImageFilter, ImageEnhance
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(HERE, "out")
@@ -59,19 +59,25 @@ def _apply_scrim(img, top_frac=0.5, max_alpha=235):
 
 def ai_hero_background(plan, w, h, variant=0):
     """Pollinations.ai (free, no API key) se professional tech marketing background.
-    variant se har slide ka apna alag (lekin same-mood) visual milta hai."""
+    variant se har slide ka apna alag (lekin same-mood) visual milta hai.
+    Free tier ~686px native resolution deta hai (chahe jitni width maango) — is liye
+    prompt mein sharpness push karte hain aur baad mein unsharp-mask + contrast se
+    upscale ka softness compensate karte hain."""
     mood = PALETTE_MOOD.get(plan["palette"], "dark navy background, warm amber gold glowing accents")
     niche = os.environ.get("NICHE", "software house")
     prompt = (f"modern professional instagram marketing graphic for a {niche}, {mood}, "
               f"sleek laptop or phone mockup with a dashboard UI, small 3d isometric tech icons, "
-              f"clean minimal corporate branding style, high quality, no text, no watermark, no logo")
+              f"clean minimal corporate branding style, sharp focus, highly detailed, crisp render, "
+              f"high quality, no text, no watermark, no logo")
     seed = (abs(hash(plan["date"])) + variant * 7919) % 100000
     url = ("https://image.pollinations.ai/prompt/" + urllib.parse.quote(prompt)
            + f"?width={w}&height={h}&nologo=true&seed={seed}")
     r = requests.get(url, timeout=45)
     r.raise_for_status()
     img = Image.open(io.BytesIO(r.content)).convert("RGB")
-    return ImageOps.fit(img, (w, h), Image.LANCZOS)
+    img = ImageOps.fit(img, (w, h), Image.LANCZOS)
+    img = img.filter(ImageFilter.UnsharpMask(radius=2, percent=140, threshold=2))
+    return ImageEnhance.Contrast(img).enhance(1.08)
 
 
 def render(text, w, h, path, plan, slide_no=None, total=None):
