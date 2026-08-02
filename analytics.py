@@ -43,7 +43,8 @@ def main():
                "account": account_snapshot(), "media": []}
 
     for p in hist["posted"][-30:]:   # last 30 din ki insights refresh
-        entry = {"date": p["date"], "topic": p["topic"], "style": p.get("style", "")}
+        entry = {"date": p["date"], "topic": p["topic"], "style": p.get("style", ""),
+                  "category": p.get("category", "")}
         if p.get("post_id"):
             entry["post"] = media_insights(p["post_id"], POST_METRICS)
         if p.get("reel_id"):

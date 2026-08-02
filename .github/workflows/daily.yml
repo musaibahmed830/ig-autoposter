@@ -8,6 +8,41 @@ on:
         description: "Manual topic (khaali chhodo auto-rotation ke liye)"
         required: false
         type: string
+      category:
+        description: "Manual post category (sirf topic diya ho tab matter karta hai)"
+        required: false
+        type: choice
+        default: "Default (brand niche)"
+        options:
+          - "Default (brand niche)"
+          - "Technology"
+          - "Business"
+          - "Event"
+          - "Vlog / Behind-the-scenes"
+          - "Travel"
+          - "Lifestyle"
+          - "Food"
+          - "Fashion"
+          - "Beauty"
+          - "Fitness & Health"
+          - "Education"
+          - "Entertainment"
+          - "Comedy"
+          - "Sports"
+          - "Music"
+          - "Gaming"
+          - "News & Current Affairs"
+          - "Real Estate"
+          - "Automotive"
+          - "Finance"
+          - "Parenting"
+          - "Photography"
+          - "Art & Design"
+          - "DIY & Crafts"
+          - "Motivation"
+          - "Pets & Animals"
+          - "Nature"
+          - "Charity / Nonprofit"
 permissions:
   contents: write
 jobs:
@@ -24,6 +59,7 @@ jobs:
       - name: Run pipeline
         env:
           MANUAL_TOPIC: ${{ github.event.inputs.topic }}
+          MANUAL_CATEGORY: ${{ github.event.inputs.category }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           IG_USER_ID: ${{ secrets.IG_USER_ID }}
           IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}

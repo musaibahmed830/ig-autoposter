@@ -101,7 +101,8 @@ def main():
     from variety import load_history, save_history
     hist = load_history()
     hist["posted"].append({"date": c["date"], "topic": c["topic"], "style": c.get("style",""),
-                            "palette": c.get("palette",""), "post_id": post_id, "reel_id": reel_id})
+                            "palette": c.get("palette",""), "category": c.get("category",""),
+                            "post_id": post_id, "reel_id": reel_id})
     save_history(hist)
     print("History saved.")
 

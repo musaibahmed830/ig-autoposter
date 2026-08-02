@@ -79,9 +79,10 @@ def build():
     rows = ""
     for m in reversed(media[-14:]):
         r, p = m.get("reel", {}) or {}, m.get("post", {}) or {}
+        cat_badge = f'<br><span class="badge cat">{html.escape(m["category"])}</span>' if m.get("category") else ""
         rows += f'''<tr>
 <td><span class="d">{html.escape(m.get("date",""))}</span><br><span class="t">{html.escape(m.get("topic","")[:48])}</span></td>
-<td><span class="badge">{html.escape(m.get("style","—"))}</span></td>
+<td><span class="badge">{html.escape(m.get("style","—"))}</span>{cat_badge}</td>
 <td class="num">{fmt(r.get("views"))}</td><td class="num">{fmt(r.get("reach"))}</td>
 <td class="num">{fmt((r.get("likes",0) or 0)+(p.get("likes",0) or 0))}</td>
 <td class="num">{fmt((r.get("saved",0) or 0)+(p.get("saved",0) or 0))}</td>
@@ -143,7 +144,8 @@ tr:last-child td {{ border-bottom:none; }}
 th.num-h {{ text-align:right; }}
 .d {{ font:500 12px 'JetBrains Mono',monospace; color:var(--dim); }}
 .t {{ font-size:13.5px; }}
-.badge {{ font-size:11.5px; color:var(--amber); border:1px solid var(--line); padding:3px 9px; border-radius:99px; white-space:nowrap; }}
+.badge {{ font-size:11.5px; color:var(--amber); border:1px solid var(--line); padding:3px 9px; border-radius:99px; white-space:nowrap; display:inline-block; margin-top:4px; }}
+.badge.cat {{ color:var(--dim); }}
 footer {{ color:var(--dim); font-size:12px; margin-top:22px; text-align:center; }}
 @media (prefers-reduced-motion:no-preference) {{ .hero svg path {{ transition:d .4s; }} }}
 </style></head><body><div class="wrap">

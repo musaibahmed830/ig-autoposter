@@ -19,10 +19,17 @@ def generate(plan: dict) -> dict:
     lang = os.environ.get("LANGUAGE", "English with a little Roman Urdu flavor")
     n = plan["n_slides"]
 
+    category = os.environ.get("MANUAL_CATEGORY", "").strip()
+    if category.lower().startswith("default"):
+        category = ""
+    category_note = (f"\nManual override: this specific post is a **{category}** category post — "
+                      f"adapt tone, framing, and hashtags for {category} content, even if it differs "
+                      f"from the usual {niche} niche, while still representing {brand}.\n") if category else ""
+
     prompt = f"""You are a social media content writer for "{brand}", a {niche} based in {city}.
 Today's topic: {plan['topic']}
 Today's format: {plan['style_desc']} — follow this format strictly so today's post feels different from other days.
-
+{category_note}
 Write Instagram content in {lang}. Respond with ONLY a JSON object, no markdown fences, keys:
 - "caption": 3-6 lines in the format above. First line = hook. Weave in 2-3 searchable keywords naturally. End with a CTA. No hashtags here.
 - "hashtags": array of exactly 15 hashtags (no #): mix niche + topic + {city}/local. Small-to-medium tags, not only huge ones.
@@ -46,6 +53,7 @@ Write Instagram content in {lang}. Respond with ONLY a JSON object, no markdown 
     data.setdefault("headline_small", "")
     data.setdefault("headline_big", plan["topic"])
     data.setdefault("panel_text", data["slides"][0])
+    data["category"] = category
     data.update(plan)
     return data
 
