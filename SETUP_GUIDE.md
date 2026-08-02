@@ -75,9 +75,10 @@ Graph API ko media ka **public URL** chahiye, is liye:
 4. Uske baad roz **6 PM PKT** khud chalega (`daily.yml` mein cron change kar sakte ho)
 
 ### Manual/on-demand post
-"Run workflow" dabane par 2 optional fields milte hain:
+"Run workflow" dabane par 3 optional fields milte hain (teeno sirf tab matter karte hain jab **topic** diya ho):
 - **topic**: khaali chhodo to auto-rotation chalegi, ya apna custom topic likho (jaise "TechNova at Karachi Tech Summit 2026")
-- **category**: dropdown se content ka category choose karo (Technology, Event, Vlog, Travel, Food, etc.) — sirf tab matter karta hai jab topic bhi diya ho. Caption/hashtags us category ke hisab se adapt ho jate hain, brand niche se hat kar bhi.
+- **category**: content ka tone/vibe adjust karta hai (Technology, Event, Vlog, Travel, Food, etc.) — brand identity (TechNova software house) wahi rehti hai, sirf style/hashtags shift hote hain.
+- **niche**: **poori business identity switch** kar deta hai us ek post ke liye (Traveller, Event Organizer, Food Blogger, etc.) — caption, hashtags, image tagline sab us naye persona ke hisab se ban jate hain, jaise TechNova ka koi taluq hi na ho. Ek-off diverse content ke liye useful (jaise koi personal/side project post karna ho).
 
 ## Local test (publish ke baghair)
 
