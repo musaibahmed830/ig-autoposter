@@ -89,11 +89,6 @@ export BRAND_NAME="Apni Agency"
 DRY_RUN=1 python run_daily.py     # out/ folder mein post.jpg + reel.mp4 check karo
 ```
 
-## Music (optional)
-
-`assets/music.mp3` rakh do to reel mein background music aa jayega.
-**Sirf copyright-free music** use karo (e.g. Pixabay Music, YouTube Audio Library) — copyrighted track se reel mute/block ho sakta hai.
-
 ## Zaroori notes
 
 - **Lead-scraping wale account se ye mat jorna** — posting hamesha is naye business account par, alag rakho
@@ -131,8 +126,10 @@ DRY_RUN=1 python run_daily.py     # out/ folder mein post.jpg + reel.mp4 check k
   aap app se khud post karo aur trending sound wahan lagao. Baqi din automation chalta hai.
 
 ## Music rotation
-`assets/music/` mein multiple copyright-free .mp3 rakho — roz rotate honge (Pixabay Music,
-YouTube Audio Library se lo. Copyrighted track = reel mute/block risk).
+`assets/music/` mein 7 royalty-free tracks (Mixkit — free commercial license, koi attribution
+nahi chahiye) already included hain, roz alag track rotate hoti hai. Aur tracks add/replace
+karne hain to `assets/music/*.mp3` mein daal do — sirf copyright-free rakhna (Mixkit, Pixabay
+Music, YouTube Audio Library) warna reel mute/block ho sakti hai.
 
 
 ## Connect Instagram wizard (dashboard se)
