@@ -51,8 +51,10 @@ def generate(plan: dict) -> dict:
         category = ""
 
     niche_override = os.environ.get("MANUAL_NICHE", "").strip()
+    if niche_override.lower().startswith("default"):
+        niche_override = ""
     identity_note = ""
-    if niche_override and not niche_override.lower().startswith("default"):
+    if niche_override:
         preset = NICHE_PRESETS.get(niche_override.lower())
         if preset:
             identity_note = (f"\nManual override: for this specific post, IGNORE the usual "
