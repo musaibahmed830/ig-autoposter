@@ -73,13 +73,16 @@ def _radial_glow(img, accent, cx_f=0.82, cy_f=0.12, r_f=0.55, alpha=90):
     return Image.alpha_composite(img.convert("RGBA"), overlay).convert("RGB")
 
 
-def _apply_scrim(img, top_frac=0.45, max_alpha=235):
-    """Bottom-up dark gradient overlay — AI background ke upar text readable rakhne ke liye."""
+def _apply_scrim(img, top_frac=0.45, max_alpha=235, base_alpha=95):
+    """Poore image par halka uniform darken (base_alpha) + top_frac se neeche strong
+    gradient (max_alpha) — taake logo/headline text bhi hamesha readable rahe, chahe AI
+    background jitna bhi bright/same-color ho (sirf bottom-scrim kaafi nahi tha)."""
     w, h = img.size
     overlay = Image.new("RGBA", (w, h), (0, 0, 0, 0))
     start_y = int(h * top_frac)
+    overlay.paste((0, 0, 0, base_alpha), (0, 0, w, start_y))
     for y in range(start_y, h):
-        a = int(max_alpha * (y - start_y) / (h - start_y))
+        a = int(base_alpha + (max_alpha - base_alpha) * (y - start_y) / (h - start_y))
         overlay.paste((0, 0, 0, a), (0, y, w, y + 1))
     return Image.alpha_composite(img.convert("RGBA"), overlay).convert("RGB")
 
@@ -112,11 +115,11 @@ def cloudflare_ai_background(plan, w, h, variant=0):
     return img if img.size == (w, h) else ImageOps.fit(img, (w, h), Image.LANCZOS)
 
 
-def _tracked_text(d, xy, text, font, fill, tracking=0):
+def _tracked_text(d, xy, text, font, fill, tracking=0, stroke_width=0, stroke_fill=None):
     """Letter-spacing ke saath text draw karta hai (uppercase headings ke liye)."""
     x, y = xy
     for ch in text:
-        d.text((x, y), ch, font=font, fill=fill)
+        d.text((x, y), ch, font=font, fill=fill, stroke_width=stroke_width, stroke_fill=stroke_fill)
         x += d.textlength(ch, font=font) + tracking
     return x
 
@@ -235,8 +238,9 @@ def render(text, w, h, path, plan, slide_no=None, total=None, headline_small="",
     for i in range(3):
         bx = pad + i*10
         d.polygon([(bx, logo_y+26), (bx+8, logo_y), (bx+16, logo_y), (bx+8, logo_y+26)], fill=accent)
+    shadow = (0, 0, 0, 210)
     brand_font = ImageFont.truetype(F_BOLD, int(w*0.042))
-    d.text((pad+42, logo_y-4), brand, font=brand_font, fill="#ffffff")
+    d.text((pad+42, logo_y-4), brand, font=brand_font, fill="#ffffff", stroke_width=3, stroke_fill=shadow)
     tag_font = ImageFont.truetype(F_REG, int(w*0.02))
     niche_override = plan.get("niche_override", "")
     if niche_override:
@@ -244,14 +248,15 @@ def render(text, w, h, path, plan, slide_no=None, total=None, headline_small="",
     else:
         niche = os.environ.get("NICHE", "")
         tagline = "SOFTWARE · APPS · ERP" if "erp" in niche.lower() else niche[:34].upper()
-    d.text((pad+43, logo_y+int(w*0.05)), tagline, font=tag_font, fill=_darker("#ffffff", 0.55))
+    d.text((pad+43, logo_y+int(w*0.05)), tagline, font=tag_font, fill=_darker("#ffffff", 0.55),
+           stroke_width=2, stroke_fill=shadow)
 
     # Headline
     y = int(h * (0.2 if slide_no is None else 0.16))
     if small:
         sfont = ImageFont.truetype(F_SEMI, int(w*0.04))
         for line in textwrap.wrap(small, width=26):
-            _tracked_text(d, (pad, y), line, sfont, "#e8ecf4", tracking=2)
+            _tracked_text(d, (pad, y), line, sfont, "#e8ecf4", tracking=2, stroke_width=3, stroke_fill=shadow)
             y += int(w*0.058)
         y += int(w*0.015)
     bfont_size = int(w * (0.108 if slide_no is None else 0.1))
@@ -268,7 +273,7 @@ def render(text, w, h, path, plan, slide_no=None, total=None, headline_small="",
     lines = lines[:2]
     line_h = int(bfont_size * 1.02)
     for line in lines:
-        d.text((pad, y), line, font=bfont, fill=accent)
+        d.text((pad, y), line, font=bfont, fill=accent, stroke_width=5, stroke_fill=shadow)
         y += line_h
     headline_bottom = y + int(w*0.02)
 
@@ -292,13 +297,13 @@ def render(text, w, h, path, plan, slide_no=None, total=None, headline_small="",
         box = [pad, panel_top, w-pad, panel_top+box_h]
         panel_overlay = Image.new("RGBA", (w, h), (0, 0, 0, 0))
         pd = ImageDraw.Draw(panel_overlay)
-        pd.rounded_rectangle(box, radius=16, fill=(0, 0, 0, 150), outline=_hex(accent)+(255,), width=2)
+        pd.rounded_rectangle(box, radius=16, fill=(0, 0, 0, 190), outline=_hex(accent)+(255,), width=2)
         img = Image.alpha_composite(img.convert("RGBA"), panel_overlay).convert("RGB")
         d = ImageDraw.Draw(img)
         ty = panel_top + int(w*0.05)
         for line in plines:
             lw = d.textlength(line, font=pfont)
-            d.text(((w-lw)/2, ty), line, font=pfont, fill="#e8ecf4")
+            d.text(((w-lw)/2, ty), line, font=pfont, fill="#e8ecf4", stroke_width=2, stroke_fill=shadow)
             ty += line_h2
         footer_y = box[3] + int(h*0.035)
     else:
@@ -308,12 +313,13 @@ def render(text, w, h, path, plan, slide_no=None, total=None, headline_small="",
     handle = "@" + re.sub(r"[^a-z0-9]", "", brand.lower())
     ffont = ImageFont.truetype(F_SEMI, int(w*0.028))
     fw = d.textlength(handle, font=ffont)
-    d.text(((w-fw)/2, min(footer_y, h - int(w*0.09))), handle, font=ffont, fill=accent)
+    d.text(((w-fw)/2, min(footer_y, h - int(w*0.09))), handle, font=ffont, fill=accent,
+           stroke_width=3, stroke_fill=shadow)
 
     if slide_no:
         cfont = ImageFont.truetype(F_SEMI, int(w * 0.028))
         d.text((w - pad - d.textlength(f"{slide_no}/{total}", font=cfont), int(h*0.045)),
-               f"{slide_no}/{total}", font=cfont, fill="#ffffff")
+               f"{slide_no}/{total}", font=cfont, fill="#ffffff", stroke_width=3, stroke_fill=shadow)
 
     img.save(path, "JPEG", quality=92)
 
