@@ -1,15 +1,16 @@
 {
-  "updated": "2026-08-01T10:03:14.033064Z",
+  "updated": "2026-08-02T10:01:26.309692Z",
   "account": {
     "username": "technova.solutions",
     "followers": 0,
-    "media_count": 16
+    "media_count": 34
   },
   "media": [
     {
       "date": "2026-07-30",
       "topic": "How often should a brand really post?",
       "style": "question_hook",
+      "category": "",
       "post": {
         "error": "Unsupported get request. Object with ID '18000947021972864' does not exist, cannot be loaded due to missing permissions, or does not support this operation"
       },
@@ -20,13 +21,14 @@
         "comments": 0,
         "saved": 0,
         "shares": 0,
-        "ig_reels_avg_watch_time": 2581
+        "ig_reels_avg_watch_time": 2535
       }
     },
     {
       "date": "2026-07-31",
       "topic": "The real cost of NOT having a mobile app for your business in 2026",
       "style": "how_to",
+      "category": "",
       "post": {
         "error": "Unsupported get request. Object with ID '18183353791366155' does not exist, cannot be loaded due to missing permissions, or does not support this operation"
       },
@@ -44,6 +46,7 @@
       "date": "2026-07-31",
       "topic": "The real cost of NOT having a mobile app for your business in 2026",
       "style": "hot_take",
+      "category": "",
       "post": {
         "reach": 0,
         "likes": 0,
@@ -65,6 +68,7 @@
       "date": "2026-07-31",
       "topic": "5 signs your website is costing you customers instead of getting them",
       "style": "stat_shock",
+      "category": "",
       "post": {
         "reach": 0,
         "likes": 0,
@@ -79,19 +83,20 @@
         "comments": 0,
         "saved": 0,
         "shares": 0,
-        "ig_reels_avg_watch_time": 2089
+        "ig_reels_avg_watch_time": 2120
       }
     },
     {
       "date": "2026-07-31",
       "topic": "Why your first 3 words decide everything",
       "style": "mini_story",
+      "category": "",
       "post": {
         "error": "Unsupported get request. Object with ID '18109295239824793' does not exist, cannot be loaded due to missing permissions, or does not support this operation"
       },
       "reel": {
         "views": 126,
-        "reach": 118,
+        "reach": 120,
         "likes": 1,
         "comments": 0,
         "saved": 0,
@@ -103,6 +108,7 @@
       "date": "2026-07-31",
       "topic": "Saves and shares: the metrics IG rewards most",
       "style": "how_to",
+      "category": "",
       "post": {
         "reach": 0,
         "likes": 0,
@@ -124,6 +130,7 @@
       "date": "2026-07-31",
       "topic": "The biggest myth about custom software being too expensive",
       "style": "hot_take",
+      "category": "",
       "post": {
         "reach": 0,
         "likes": 0,
@@ -132,19 +139,164 @@
         "shares": 0
       },
       "reel": {
-        "views": 15,
-        "reach": 14,
+        "views": 20,
+        "reach": 18,
         "likes": 0,
         "comments": 0,
         "saved": 0,
         "shares": 0,
-        "ig_reels_avg_watch_time": 2063
+        "ig_reels_avg_watch_time": 2092
       }
     },
     {
       "date": "2026-08-01",
       "topic": "How UI/UX design directly affects sales",
       "style": "quick_tips",
+      "category": "",
+      "post": {
+        "reach": 0,
+        "likes": 0,
+        "comments": 0,
+        "saved": 0,
+        "shares": 0
+      },
+      "reel": {
+        "views": 116,
+        "reach": 106,
+        "likes": 0,
+        "comments": 0,
+        "saved": 0,
+        "shares": 0,
+        "ig_reels_avg_watch_time": 1737
+      }
+    },
+    {
+      "date": "2026-08-01",
+      "topic": "Why app maintenance matters as much as app launch",
+      "style": "myth_bust",
+      "category": "",
+      "post": {
+        "reach": 0,
+        "likes": 0,
+        "comments": 0,
+        "saved": 0,
+        "shares": 0
+      },
+      "reel": {
+        "views": 5,
+        "reach": 4,
+        "likes": 0,
+        "comments": 0,
+        "saved": 0,
+        "shares": 0,
+        "ig_reels_avg_watch_time": 6133
+      }
+    },
+    {
+      "date": "2026-08-01",
+      "topic": "The difference between a freelancer and a software house",
+      "style": "question_hook",
+      "category": "",
+      "post": {
+        "reach": 0,
+        "likes": 0,
+        "comments": 0,
+        "saved": 0,
+        "shares": 0
+      },
+      "reel": {
+        "views": 3,
+        "reach": 3,
+        "likes": 0,
+        "comments": 0,
+        "saved": 0,
+        "shares": 0,
+        "ig_reels_avg_watch_time": 3769
+      }
+    },
+    {
+      "date": "2026-08-01",
+      "topic": "How to future-proof your business with the right tech stack",
+      "style": "mini_story",
+      "category": "",
+      "post": {
+        "reach": 0,
+        "likes": 0,
+        "comments": 0,
+        "saved": 0,
+        "shares": 0
+      },
+      "reel": {
+        "views": 3,
+        "reach": 3,
+        "likes": 0,
+        "comments": 0,
+        "saved": 0,
+        "shares": 0,
+        "ig_reels_avg_watch_time": 69882
+      }
+    },
+    {
+      "date": "2026-08-02",
+      "topic": "Advertisement of mobile app",
+      "style": "hot_take",
+      "category": "",
+      "post": {
+        "reach": 0,
+        "likes": 0,
+        "comments": 0,
+        "saved": 0,
+        "shares": 0
+      },
+      "reel": {
+        "views": 6,
+        "reach": 6,
+        "likes": 0,
+        "comments": 0,
+        "saved": 0,
+        "shares": 0,
+        "ig_reels_avg_watch_time": 2142
+      }
+    },
+    {
+      "date": "2026-08-02",
+      "topic": "upto 74 percent azadi sale or web and app development due to 14 august independence day of pakistan and theme of the post is green",
+      "style": "how_to",
+      "category": "Event",
+      "post": {
+        "reach": 0,
+        "likes": 0,
+        "comments": 0,
+        "saved": 0,
+        "shares": 0
+      },
+      "reel": {
+        "views": 0,
+        "reach": 0,
+        "likes": 0,
+        "comments": 0,
+        "saved": 0,
+        "shares": 0,
+        "ig_reels_avg_watch_time": 188290
+      }
+    },
+    {
+      "date": "2026-08-02",
+      "topic": "Brand Name Piyya Virus promte thier special geny virus pizza post",
+      "style": "stat_shock",
+      "category": "Food",
+      "post": {
+        "error": "Unsupported get request. Object with ID '17868938802586202' does not exist, cannot be loaded due to missing permissions, or does not support this operation"
+      },
+      "reel": {
+        "error": "Unsupported get request. Object with ID '18221496349330502' does not exist, cannot be loaded due to missing permissions, or does not support this operation"
+      }
+    },
+    {
+      "date": "2026-08-02",
+      "topic": "What makes a mobile app actually get downloaded and used",
+      "style": "question_hook",
+      "category": "",
       "post": {
         "reach": 0,
         "likes": 0,
@@ -163,9 +315,10 @@
       }
     },
     {
-      "date": "2026-08-01",
-      "topic": "Why app maintenance matters as much as app launch",
-      "style": "myth_bust",
+      "date": "2026-08-02",
+      "topic": "Signs your business processes need software, not more people",
+      "style": "mini_story",
+      "category": "",
       "post": {
         "reach": 0,
         "likes": 0,
@@ -181,6 +334,72 @@
         "saved": 0,
         "shares": 0,
         "ig_reels_avg_watch_time": 0
+      }
+    },
+    {
+      "date": "2026-08-02",
+      "topic": "Why a professional website builds trust before the first call",
+      "style": "how_to",
+      "category": "",
+      "post": {
+        "reach": 0,
+        "likes": 0,
+        "comments": 0,
+        "saved": 0,
+        "shares": 0
+      },
+      "reel": {
+        "views": 0,
+        "reach": 0,
+        "likes": 0,
+        "comments": 0,
+        "saved": 0,
+        "shares": 0,
+        "ig_reels_avg_watch_time": 32883
+      }
+    },
+    {
+      "date": "2026-08-02",
+      "topic": "How to increase business",
+      "style": "hot_take",
+      "category": "",
+      "post": {
+        "reach": 0,
+        "likes": 0,
+        "comments": 0,
+        "saved": 0,
+        "shares": 0
+      },
+      "reel": {
+        "views": 83,
+        "reach": 81,
+        "likes": 1,
+        "comments": 0,
+        "saved": 0,
+        "shares": 0,
+        "ig_reels_avg_watch_time": 1214
+      }
+    },
+    {
+      "date": "2026-08-02",
+      "topic": "How ERP connects sales, inventory, and finance in one place",
+      "style": "question_hook",
+      "category": "",
+      "post": {
+        "reach": 0,
+        "likes": 0,
+        "comments": 0,
+        "saved": 0,
+        "shares": 0
+      },
+      "reel": {
+        "views": 0,
+        "reach": 0,
+        "likes": 0,
+        "comments": 0,
+        "saved": 0,
+        "shares": 0,
+        "ig_reels_avg_watch_time": 7933
       }
     }
   ]
