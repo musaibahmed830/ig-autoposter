@@ -1,11 +1,15 @@
 """
-Branded poster template — koi external AI image API nahi (free tier ki
-unreliability se bachne ke liye): dark gradient + grid texture + logo bar +
-do-tier headline (chhota lead-in + bada punch word) + hand-drawn glowing
-icon + info panel + footer. Palette variety.py se rotate hoti hai.
+Branded poster: Cloudflare Workers AI (Flux Schnell, free tier) se real
+photoreal background — laptop/phone mockup + isometric icon badges — text
+uske upar reliable Pillow overlay hota hai (logo bar, do-tier headline,
+info panel, footer) taake branding hamesha crisp/correct rahe (AI kabhi
+text render nahi karta, hum khud karte hain).
+AI call fail ho (auth/network/quota) to hand-drawn gradient+icon template
+par automatically fallback hota hai — kabhi bhi pipeline break nahi hoti.
 """
-import os, json, math, re, textwrap
-from PIL import Image, ImageDraw, ImageFont, ImageFilter
+import io, os, json, math, re, base64, textwrap
+import requests
+from PIL import Image, ImageDraw, ImageFont, ImageFilter, ImageOps
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(HERE, "out")
@@ -17,6 +21,14 @@ F_SEMI = os.path.join(FONTS, "Poppins-SemiBold.ttf")
 F_REG = os.path.join(FONTS, "Poppins-Regular.ttf")
 
 ICONS = ["laptop", "phone", "cloud", "chart", "gear", "code", "camera", "pin"]
+
+PALETTE_MOOD = {
+    "midnight_amber":     "dark navy background, warm amber gold glowing accents",
+    "plum_orchid":        "deep plum purple background, glowing orchid pink accents",
+    "forest_mint":        "dark forest green background, glowing mint green accents",
+    "espresso_tangerine": "dark espresso brown background, glowing tangerine orange accents",
+    "deep_teal_sky":      "deep teal background, glowing sky blue accents",
+}
 
 
 def _hex(c):
@@ -61,6 +73,45 @@ def _radial_glow(img, accent, cx_f=0.82, cy_f=0.12, r_f=0.55, alpha=90):
     return Image.alpha_composite(img.convert("RGBA"), overlay).convert("RGB")
 
 
+def _apply_scrim(img, top_frac=0.45, max_alpha=235):
+    """Bottom-up dark gradient overlay — AI background ke upar text readable rakhne ke liye."""
+    w, h = img.size
+    overlay = Image.new("RGBA", (w, h), (0, 0, 0, 0))
+    start_y = int(h * top_frac)
+    for y in range(start_y, h):
+        a = int(max_alpha * (y - start_y) / (h - start_y))
+        overlay.paste((0, 0, 0, a), (0, y, w, y + 1))
+    return Image.alpha_composite(img.convert("RGBA"), overlay).convert("RGB")
+
+
+def _round8(n):
+    return max(8, (n // 8) * 8)
+
+
+def cloudflare_ai_background(plan, w, h, variant=0):
+    """Cloudflare Workers AI (Flux Schnell, free daily quota) se photoreal background."""
+    account = os.environ["CLOUDFLARE_ACCOUNT_ID"]
+    token = os.environ["CLOUDFLARE_API_TOKEN"]
+    niche = plan.get("niche_override") or os.environ.get("NICHE", "software house")
+    mood = PALETTE_MOOD.get(plan["palette"], "dark navy background, warm amber gold glowing accents")
+    prompt = (f"professional 3D product photography representing a {niche}, {mood}, "
+              f"laptop and phone with a tech dashboard interface, floating isometric "
+              f"icon badges, cinematic lighting, sharp focus, highly detailed, "
+              f"empty plain background, no large text, no logos, no titles, no headline "
+              f"words, no writing, no signage, no branding, no watermark")
+    rw, rh = _round8(w), _round8(h)
+    seed = (abs(hash(plan["date"])) + variant * 7919) % 100000
+    url = f"https://api.cloudflare.com/client/v4/accounts/{account}/ai/run/@cf/black-forest-labs/flux-1-schnell"
+    r = requests.post(url, headers={"Authorization": f"Bearer {token}"},
+                       json={"prompt": prompt, "width": rw, "height": rh, "seed": seed}, timeout=45)
+    r.raise_for_status()
+    data = r.json()
+    if not data.get("success") or "image" not in data.get("result", {}):
+        raise RuntimeError(str(data.get("errors", "unknown Cloudflare AI error")))
+    img = Image.open(io.BytesIO(base64.b64decode(data["result"]["image"]))).convert("RGB")
+    return img if img.size == (w, h) else ImageOps.fit(img, (w, h), Image.LANCZOS)
+
+
 def _tracked_text(d, xy, text, font, fill, tracking=0):
     """Letter-spacing ke saath text draw karta hai (uppercase headings ke liye)."""
     x, y = xy
@@ -70,11 +121,7 @@ def _tracked_text(d, xy, text, font, fill, tracking=0):
     return x
 
 
-def _tracked_width(d, text, font, tracking=0):
-    return sum(d.textlength(ch, font=font) + tracking for ch in text) - (tracking if text else 0)
-
-
-# ---------- Icons: flat line-art, glow ke saath ----------
+# ---------- Icons: flat line-art, glow ke saath (AI fail ho to fallback ke liye) ----------
 
 def _icon_laptop(d, cx, cy, s, color, w_stroke):
     sw, sh = s*1.05, s*0.68
@@ -169,9 +216,16 @@ def render(text, w, h, path, plan, slide_no=None, total=None, headline_small="",
     brand = os.environ.get("BRAND_NAME", "My Brand")
     small, big = split_headline(headline_small, text)
 
-    img = _gradient(w, h, _darker(bg, 0.45), _darker(bg, 0.7), accent)
-    img = _grid(img, accent, alpha=14, step=int(w*0.06))
-    img = _radial_glow(img, accent)
+    ai_bg = False
+    try:
+        img = cloudflare_ai_background(plan, w, h, variant=(slide_no or 0))
+        img = _apply_scrim(img, top_frac=0.44 if slide_no is None else 0.38)
+        ai_bg = True
+    except Exception as e:
+        print(f"AI background fail hua ({e}) — hand-drawn fallback use kar raha hoon.")
+        img = _gradient(w, h, _darker(bg, 0.45), _darker(bg, 0.7), accent)
+        img = _grid(img, accent, alpha=14, step=int(w*0.06))
+        img = _radial_glow(img, accent)
     d = ImageDraw.Draw(img)
 
     pad = int(w*0.075)
@@ -218,15 +272,16 @@ def render(text, w, h, path, plan, slide_no=None, total=None, headline_small="",
         y += line_h
     headline_bottom = y + int(w*0.02)
 
-    # Icon
-    icon_name = ICONS[(abs(hash(plan["date"])) + (slide_no or 0)) % len(ICONS)]
+    # Icon — sirf AI background fail ho tab (fallback ko visual interest dene ke liye)
     panel_top = int(h * (0.66 if slide_no is None else 0.86))
-    icon_area_top = headline_bottom + int(h*0.02)
-    icon_area_h = max(int(h*0.12), panel_top - icon_area_top - int(h*0.05))
-    icon_cy = icon_area_top + icon_area_h // 2
-    icon_s = min(int(w*(0.3 if slide_no is None else 0.4)), icon_area_h*1.3)
-    img = _draw_icon_glow(img, icon_name, w//2, icon_cy, icon_s, accent)
-    d = ImageDraw.Draw(img)
+    if not ai_bg:
+        icon_name = ICONS[(abs(hash(plan["date"])) + (slide_no or 0)) % len(ICONS)]
+        icon_area_top = headline_bottom + int(h*0.02)
+        icon_area_h = max(int(h*0.12), panel_top - icon_area_top - int(h*0.05))
+        icon_cy = icon_area_top + icon_area_h // 2
+        icon_s = min(int(w*(0.3 if slide_no is None else 0.4)), icon_area_h*1.3)
+        img = _draw_icon_glow(img, icon_name, w//2, icon_cy, icon_s, accent)
+        d = ImageDraw.Draw(img)
 
     # Info panel (sirf main post ke liye)
     if slide_no is None and panel_text:
@@ -237,7 +292,7 @@ def render(text, w, h, path, plan, slide_no=None, total=None, headline_small="",
         box = [pad, panel_top, w-pad, panel_top+box_h]
         panel_overlay = Image.new("RGBA", (w, h), (0, 0, 0, 0))
         pd = ImageDraw.Draw(panel_overlay)
-        pd.rounded_rectangle(box, radius=16, fill=(0, 0, 0, 130), outline=_hex(accent)+(255,), width=2)
+        pd.rounded_rectangle(box, radius=16, fill=(0, 0, 0, 150), outline=_hex(accent)+(255,), width=2)
         img = Image.alpha_composite(img.convert("RGBA"), panel_overlay).convert("RGB")
         d = ImageDraw.Draw(img)
         ty = panel_top + int(w*0.05)
