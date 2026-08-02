@@ -97,11 +97,11 @@ def cloudflare_ai_background(plan, w, h, variant=0):
     token = os.environ["CLOUDFLARE_API_TOKEN"]
     niche = plan.get("niche_override") or os.environ.get("NICHE", "software house")
     mood = PALETTE_MOOD.get(plan["palette"], "dark navy background, warm amber gold glowing accents")
-    prompt = (f"professional 3D product photography representing a {niche}, {mood}, "
-              f"laptop and phone with a tech dashboard interface, floating isometric "
-              f"icon badges, cinematic lighting, sharp focus, highly detailed, "
-              f"empty plain background, no large text, no logos, no titles, no headline "
-              f"words, no writing, no signage, no branding, no watermark")
+    prompt = (f"professional 3D product photography, mood evoking a {niche}, {mood}, "
+              f"laptop and phone with an abstract tech dashboard interface, floating "
+              f"isometric icon badges, cinematic lighting, sharp focus, highly detailed, "
+              f"plain empty background, completely free of any text, letters, numbers, "
+              f"words, logos, titles, signage, captions, or writing of any kind")
     rw, rh = _round8(w), _round8(h)
     seed = (abs(hash(plan["date"])) + variant * 7919) % 100000
     url = f"https://api.cloudflare.com/client/v4/accounts/{account}/ai/run/@cf/black-forest-labs/flux-1-schnell"
