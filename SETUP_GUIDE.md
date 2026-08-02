@@ -74,6 +74,11 @@ Graph API ko media ka **public URL** chahiye, is liye:
 3. **Actions** tab → "Daily IG Post + Reel" → **Run workflow** se manual test karo
 4. Uske baad roz **6 PM PKT** khud chalega (`daily.yml` mein cron change kar sakte ho)
 
+### Manual/on-demand post
+"Run workflow" dabane par 2 optional fields milte hain:
+- **topic**: khaali chhodo to auto-rotation chalegi, ya apna custom topic likho (jaise "TechNova at Karachi Tech Summit 2026")
+- **category**: dropdown se content ka category choose karo (Technology, Event, Vlog, Travel, Food, etc.) — sirf tab matter karta hai jab topic bhi diya ho. Caption/hashtags us category ke hisab se adapt ho jate hain, brand niche se hat kar bhi.
+
 ## Local test (publish ke baghair)
 
 ```bash
