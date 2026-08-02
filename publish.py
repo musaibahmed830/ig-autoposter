@@ -102,6 +102,7 @@ def main():
     hist = load_history()
     hist["posted"].append({"date": c["date"], "topic": c["topic"], "style": c.get("style",""),
                             "palette": c.get("palette",""), "category": c.get("category",""),
+                            "niche_override": c.get("niche_override",""),
                             "post_id": post_id, "reel_id": reel_id})
     save_history(hist)
     print("History saved.")

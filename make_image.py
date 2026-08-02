@@ -16,7 +16,7 @@ F_BOLD = os.path.join(FONTS, "Poppins-Bold.ttf")
 F_SEMI = os.path.join(FONTS, "Poppins-SemiBold.ttf")
 F_REG = os.path.join(FONTS, "Poppins-Regular.ttf")
 
-ICONS = ["laptop", "phone", "cloud", "chart", "gear", "code"]
+ICONS = ["laptop", "phone", "cloud", "chart", "gear", "code", "camera", "pin"]
 
 
 def _hex(c):
@@ -118,8 +118,24 @@ def _icon_code(d, cx, cy, s, color, w_stroke):
     d.line([cx+o*1.5, cy-o*0.7, cx+o*2.3, cy, cx+o*1.5, cy+o*0.7], fill=color, width=w_stroke, joint="curve")
     d.line([cx+o*0.35, cy-o*1.1, cx-o*0.35, cy+o*1.1], fill=color, width=w_stroke)
 
+def _icon_camera(d, cx, cy, s, color, w_stroke):
+    bw, bh = s*0.9, s*0.62
+    d.rounded_rectangle([cx-bw/2, cy-bh/2, cx+bw/2, cy+bh/2], radius=s*0.08, outline=color, width=w_stroke)
+    d.rectangle([cx-bw*0.18, cy-bh/2-s*0.14, cx+bw*0.1, cy-bh/2], outline=color, width=w_stroke)
+    r = s*0.2
+    d.ellipse([cx-r, cy-r+s*0.03, cx+r, cy+r+s*0.03], outline=color, width=w_stroke)
+
+def _icon_pin(d, cx, cy, s, color, w_stroke):
+    r = s*0.32
+    top = cy - s*0.28
+    d.ellipse([cx-r, top-r, cx+r, top+r], outline=color, width=w_stroke)
+    d.polygon([(cx-r*0.55, top+r*0.75), (cx+r*0.55, top+r*0.75), (cx, cy+s*0.5)], outline=color, width=w_stroke)
+    ir = r*0.4
+    d.ellipse([cx-ir, top-ir, cx+ir, top+ir], outline=color, width=w_stroke)
+
 ICON_FN = {"laptop": _icon_laptop, "phone": _icon_phone, "cloud": _icon_cloud,
-           "chart": _icon_chart, "gear": _icon_gear, "code": _icon_code}
+           "chart": _icon_chart, "gear": _icon_gear, "code": _icon_code,
+           "camera": _icon_camera, "pin": _icon_pin}
 
 
 def _draw_icon_glow(img, name, cx, cy, s, accent):
@@ -168,8 +184,12 @@ def render(text, w, h, path, plan, slide_no=None, total=None, headline_small="",
     brand_font = ImageFont.truetype(F_BOLD, int(w*0.042))
     d.text((pad+42, logo_y-4), brand, font=brand_font, fill="#ffffff")
     tag_font = ImageFont.truetype(F_REG, int(w*0.02))
-    niche = os.environ.get("NICHE", "")
-    tagline = "SOFTWARE · APPS · ERP" if "erp" in niche.lower() else niche[:34].upper()
+    niche_override = plan.get("niche_override", "")
+    if niche_override:
+        tagline = niche_override[:34].upper()
+    else:
+        niche = os.environ.get("NICHE", "")
+        tagline = "SOFTWARE · APPS · ERP" if "erp" in niche.lower() else niche[:34].upper()
     d.text((pad+43, logo_y+int(w*0.05)), tagline, font=tag_font, fill=_darker("#ffffff", 0.55))
 
     # Headline

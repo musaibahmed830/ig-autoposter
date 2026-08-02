@@ -43,6 +43,35 @@ on:
           - "Pets & Animals"
           - "Nature"
           - "Charity / Nonprofit"
+      niche:
+        description: "Manual post identity/persona switch (sirf topic diya ho tab matter karta hai)"
+        required: false
+        type: choice
+        default: "Default (brand niche)"
+        options:
+          - "Default (brand niche)"
+          - "Brand / Business (as-is)"
+          - "Event Organizer"
+          - "Traveller / Travel Blogger"
+          - "Lifestyle Vlogger"
+          - "Food Blogger / Restaurant"
+          - "Fashion Brand"
+          - "Beauty & Skincare Brand"
+          - "Fitness Coach"
+          - "Photographer"
+          - "Real Estate Agent"
+          - "Automotive Business"
+          - "Finance Advisor"
+          - "Educator / Coach"
+          - "Musician / Artist"
+          - "Comedian / Entertainer"
+          - "Gamer / Streamer"
+          - "Pet Business"
+          - "Nonprofit / Charity"
+          - "News / Media Page"
+          - "Sports Team / Athlete"
+          - "Motivational Speaker"
+          - "Parenting / Family Blogger"
 permissions:
   contents: write
 jobs:
@@ -60,6 +89,7 @@ jobs:
         env:
           MANUAL_TOPIC: ${{ github.event.inputs.topic }}
           MANUAL_CATEGORY: ${{ github.event.inputs.category }}
+          MANUAL_NICHE: ${{ github.event.inputs.niche }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           IG_USER_ID: ${{ secrets.IG_USER_ID }}
           IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
