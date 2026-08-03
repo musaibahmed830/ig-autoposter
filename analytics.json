@@ -1,9 +1,9 @@
 {
-  "updated": "2026-08-02T10:01:26.309692Z",
+  "updated": "2026-08-03T11:30:46.794358Z",
   "account": {
     "username": "technova.solutions",
     "followers": 0,
-    "media_count": 34
+    "media_count": 39
   },
   "media": [
     {
@@ -249,13 +249,13 @@
         "shares": 0
       },
       "reel": {
-        "views": 6,
-        "reach": 6,
+        "views": 7,
+        "reach": 7,
         "likes": 0,
         "comments": 0,
         "saved": 0,
         "shares": 0,
-        "ig_reels_avg_watch_time": 2142
+        "ig_reels_avg_watch_time": 1971
       }
     },
     {
@@ -305,13 +305,13 @@
         "shares": 0
       },
       "reel": {
-        "views": 0,
-        "reach": 0,
-        "likes": 0,
+        "views": 120,
+        "reach": 107,
+        "likes": 2,
         "comments": 0,
         "saved": 0,
         "shares": 0,
-        "ig_reels_avg_watch_time": 0
+        "ig_reels_avg_watch_time": 1858
       }
     },
     {
@@ -327,13 +327,13 @@
         "shares": 0
       },
       "reel": {
-        "views": 0,
-        "reach": 0,
+        "views": 14,
+        "reach": 14,
         "likes": 0,
         "comments": 0,
         "saved": 0,
         "shares": 0,
-        "ig_reels_avg_watch_time": 0
+        "ig_reels_avg_watch_time": 1109
       }
     },
     {
@@ -349,13 +349,13 @@
         "shares": 0
       },
       "reel": {
-        "views": 0,
-        "reach": 0,
+        "views": 114,
+        "reach": 110,
         "likes": 0,
         "comments": 0,
         "saved": 0,
         "shares": 0,
-        "ig_reels_avg_watch_time": 32883
+        "ig_reels_avg_watch_time": 1407
       }
     },
     {
@@ -371,13 +371,13 @@
         "shares": 0
       },
       "reel": {
-        "views": 83,
-        "reach": 81,
+        "views": 94,
+        "reach": 91,
         "likes": 1,
         "comments": 0,
         "saved": 0,
         "shares": 0,
-        "ig_reels_avg_watch_time": 1214
+        "ig_reels_avg_watch_time": 1278
       }
     },
     {
@@ -393,13 +393,57 @@
         "shares": 0
       },
       "reel": {
-        "views": 0,
-        "reach": 0,
+        "views": 9,
+        "reach": 8,
         "likes": 0,
         "comments": 0,
         "saved": 0,
         "shares": 0,
-        "ig_reels_avg_watch_time": 7933
+        "ig_reels_avg_watch_time": 1453
+      }
+    },
+    {
+      "date": "2026-08-02",
+      "topic": "Why businesses in Karachi are going digital faster than ever",
+      "style": "mini_story",
+      "category": "",
+      "post": {
+        "reach": 0,
+        "likes": 0,
+        "comments": 0,
+        "saved": 0,
+        "shares": 0
+      },
+      "reel": {
+        "views": 29,
+        "reach": 28,
+        "likes": 0,
+        "comments": 0,
+        "saved": 1,
+        "shares": 0,
+        "ig_reels_avg_watch_time": 2620
+      }
+    },
+    {
+      "date": "2026-08-02",
+      "topic": "AI future",
+      "style": "how_to",
+      "category": "Technology",
+      "post": {
+        "reach": 1,
+        "likes": 0,
+        "comments": 0,
+        "saved": 0,
+        "shares": 0
+      },
+      "reel": {
+        "views": 9,
+        "reach": 8,
+        "likes": 0,
+        "comments": 0,
+        "saved": 0,
+        "shares": 0,
+        "ig_reels_avg_watch_time": 1316
       }
     }
   ]
