@@ -1,9 +1,9 @@
 {
-  "updated": "2026-08-03T11:30:46.794358Z",
+  "updated": "2026-08-04T10:44:15.164414Z",
   "account": {
     "username": "technova.solutions",
     "followers": 0,
-    "media_count": 39
+    "media_count": 47
   },
   "media": [
     {
@@ -415,13 +415,13 @@
         "shares": 0
       },
       "reel": {
-        "views": 29,
-        "reach": 28,
+        "views": 30,
+        "reach": 30,
         "likes": 0,
         "comments": 0,
         "saved": 1,
         "shares": 0,
-        "ig_reels_avg_watch_time": 2620
+        "ig_reels_avg_watch_time": 2578
       }
     },
     {
@@ -437,13 +437,79 @@
         "shares": 0
       },
       "reel": {
-        "views": 9,
+        "views": 10,
+        "reach": 9,
+        "likes": 0,
+        "comments": 0,
+        "saved": 0,
+        "shares": 0,
+        "ig_reels_avg_watch_time": 1270
+      }
+    },
+    {
+      "date": "2026-08-03",
+      "topic": "How a broken checkout page is costing you sales right now",
+      "style": "quick_tips",
+      "category": "",
+      "post": {
+        "reach": 0,
+        "likes": 0,
+        "comments": 0,
+        "saved": 0,
+        "shares": 0
+      },
+      "reel": {
+        "views": 7,
         "reach": 8,
         "likes": 0,
         "comments": 0,
         "saved": 0,
         "shares": 0,
-        "ig_reels_avg_watch_time": 1316
+        "ig_reels_avg_watch_time": 2376
+      }
+    },
+    {
+      "date": "2026-08-03",
+      "topic": "Why 'build it and they will come' doesn't work for apps",
+      "style": "myth_bust",
+      "category": "",
+      "post": {
+        "reach": 0,
+        "likes": 0,
+        "comments": 0,
+        "saved": 0,
+        "shares": 0
+      },
+      "reel": {
+        "views": 4,
+        "reach": 4,
+        "likes": 0,
+        "comments": 0,
+        "saved": 0,
+        "shares": 0,
+        "ig_reels_avg_watch_time": 2212
+      }
+    },
+    {
+      "date": "2026-08-03",
+      "topic": "What separates a good ERP from a great one",
+      "style": "question_hook",
+      "category": "",
+      "post": {
+        "reach": 0,
+        "likes": 0,
+        "comments": 0,
+        "saved": 0,
+        "shares": 0
+      },
+      "reel": {
+        "views": 6,
+        "reach": 7,
+        "likes": 0,
+        "comments": 0,
+        "saved": 0,
+        "shares": 0,
+        "ig_reels_avg_watch_time": 793
       }
     }
   ]
