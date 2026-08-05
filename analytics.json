@@ -1,9 +1,9 @@
 {
-  "updated": "2026-08-04T10:44:15.164414Z",
+  "updated": "2026-08-05T10:41:19.255756Z",
   "account": {
     "username": "technova.solutions",
     "followers": 0,
-    "media_count": 47
+    "media_count": 51
   },
   "media": [
     {
@@ -415,13 +415,13 @@
         "shares": 0
       },
       "reel": {
-        "views": 30,
-        "reach": 30,
+        "views": 31,
+        "reach": 31,
         "likes": 0,
         "comments": 0,
         "saved": 1,
         "shares": 0,
-        "ig_reels_avg_watch_time": 2578
+        "ig_reels_avg_watch_time": 2507
       }
     },
     {
@@ -481,13 +481,13 @@
         "shares": 0
       },
       "reel": {
-        "views": 4,
-        "reach": 4,
+        "views": 37,
+        "reach": 35,
         "likes": 0,
         "comments": 0,
         "saved": 0,
         "shares": 0,
-        "ig_reels_avg_watch_time": 2212
+        "ig_reels_avg_watch_time": 1019
       }
     },
     {
@@ -503,13 +503,57 @@
         "shares": 0
       },
       "reel": {
-        "views": 6,
-        "reach": 7,
+        "views": 11,
+        "reach": 13,
         "likes": 0,
         "comments": 0,
         "saved": 0,
         "shares": 0,
-        "ig_reels_avg_watch_time": 793
+        "ig_reels_avg_watch_time": 688
+      }
+    },
+    {
+      "date": "2026-08-04",
+      "topic": "Future of Ai",
+      "style": "stat_shock",
+      "category": "Technology",
+      "post": {
+        "reach": 0,
+        "likes": 0,
+        "comments": 0,
+        "saved": 0,
+        "shares": 0
+      },
+      "reel": {
+        "views": 4,
+        "reach": 4,
+        "likes": 0,
+        "comments": 0,
+        "saved": 0,
+        "shares": 0,
+        "ig_reels_avg_watch_time": 2530
+      }
+    },
+    {
+      "date": "2026-08-04",
+      "topic": "The one question every business owner should ask about their software",
+      "style": "mini_story",
+      "category": "",
+      "post": {
+        "reach": 0,
+        "likes": 0,
+        "comments": 0,
+        "saved": 0,
+        "shares": 0
+      },
+      "reel": {
+        "views": 13,
+        "reach": 12,
+        "likes": 0,
+        "comments": 0,
+        "saved": 0,
+        "shares": 0,
+        "ig_reels_avg_watch_time": 866
       }
     }
   ]
