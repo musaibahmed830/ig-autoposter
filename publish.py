@@ -21,6 +21,20 @@ IG_ID = os.environ["IG_USER_ID"]
 TOKEN = os.environ["IG_ACCESS_TOKEN"]
 
 
+def _check(r):
+    """raise_for_status() sirf status code deta hai — Meta ka asli error message
+    (invalid token, permissions, rate limit, etc.) response body mein hota hai,
+    is liye fail hone par wo bhi print karke raise karte hain."""
+    if not r.ok:
+        try:
+            detail = r.json()
+        except ValueError:
+            detail = r.text
+        print(f"Graph API error ({r.status_code}) for {r.url}: {detail}")
+    r.raise_for_status()
+    return r
+
+
 # ---------- Cloudinary (signed upload) ----------
 def cloudinary_upload(path, resource_type):
     cloud = os.environ["CLOUDINARY_CLOUD"]
@@ -32,7 +46,7 @@ def cloudinary_upload(path, resource_type):
     with open(path, "rb") as f:
         r = requests.post(url, data={"api_key": key, "timestamp": ts, "signature": sig},
                           files={"file": f}, timeout=300)
-    r.raise_for_status()
+    _check(r)
     return r.json()["secure_url"]
 
 
@@ -54,7 +68,7 @@ def _wait_ready(container_id, tries=40):
 def _publish(container_id):
     r = requests.post(f"{GRAPH}/{IG_ID}/media_publish",
                       data={"creation_id": container_id, "access_token": TOKEN})
-    r.raise_for_status()
+    _check(r)
     return r.json()["id"]
 
 
@@ -62,7 +76,7 @@ def publish_image(image_url, caption, alt_text=""):
     r = requests.post(f"{GRAPH}/{IG_ID}/media", data={
         "image_url": image_url, "caption": caption,
         "alt_text": alt_text, "access_token": TOKEN})
-    r.raise_for_status()
+    _check(r)
     cid = r.json()["id"]
     _wait_ready(cid)
     return _publish(cid)
@@ -72,7 +86,7 @@ def publish_reel(video_url, caption):
     r = requests.post(f"{GRAPH}/{IG_ID}/media", data={
         "media_type": "REELS", "video_url": video_url,
         "caption": caption, "share_to_feed": "true", "access_token": TOKEN})
-    r.raise_for_status()
+    _check(r)
     cid = r.json()["id"]
     _wait_ready(cid)
     return _publish(cid)
