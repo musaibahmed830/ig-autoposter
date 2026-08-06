@@ -1,9 +1,9 @@
 {
-  "updated": "2026-08-05T10:41:19.255756Z",
+  "updated": "2026-08-06T10:43:47.492269Z",
   "account": {
-    "username": "technova.solutions",
+    "username": "",
     "followers": 0,
-    "media_count": 51
+    "media_count": 0
   },
   "media": [
     {
@@ -12,16 +12,10 @@
       "style": "question_hook",
       "category": "",
       "post": {
-        "error": "Unsupported get request. Object with ID '18000947021972864' does not exist, cannot be loaded due to missing permissions, or does not support this operation"
+        "error": "Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons."
       },
       "reel": {
-        "views": 35,
-        "reach": 35,
-        "likes": 0,
-        "comments": 0,
-        "saved": 0,
-        "shares": 0,
-        "ig_reels_avg_watch_time": 2535
+        "error": "Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons."
       }
     },
     {
@@ -30,16 +24,10 @@
       "style": "how_to",
       "category": "",
       "post": {
-        "error": "Unsupported get request. Object with ID '18183353791366155' does not exist, cannot be loaded due to missing permissions, or does not support this operation"
+        "error": "Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons."
       },
       "reel": {
-        "views": 0,
-        "reach": 0,
-        "likes": 0,
-        "comments": 0,
-        "saved": 0,
-        "shares": 0,
-        "ig_reels_avg_watch_time": 5294
+        "error": "Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons."
       }
     },
     {
@@ -48,20 +36,10 @@
       "style": "hot_take",
       "category": "",
       "post": {
-        "reach": 0,
-        "likes": 0,
-        "comments": 0,
-        "saved": 0,
-        "shares": 0
+        "error": "Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons."
       },
       "reel": {
-        "views": 0,
-        "reach": 0,
-        "likes": 0,
-        "comments": 0,
-        "saved": 0,
-        "shares": 0,
-        "ig_reels_avg_watch_time": 6181
+        "error": "Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons."
       }
     },
     {
@@ -70,20 +48,10 @@
       "style": "stat_shock",
       "category": "",
       "post": {
-        "reach": 0,
-        "likes": 0,
-        "comments": 0,
-        "saved": 0,
-        "shares": 0
+        "error": "Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons."
       },
       "reel": {
-        "views": 18,
-        "reach": 17,
-        "likes": 0,
-        "comments": 0,
-        "saved": 0,
-        "shares": 0,
-        "ig_reels_avg_watch_time": 2120
+        "error": "Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons."
       }
     },
     {
@@ -92,16 +60,10 @@
       "style": "mini_story",
       "category": "",
       "post": {
-        "error": "Unsupported get request. Object with ID '18109295239824793' does not exist, cannot be loaded due to missing permissions, or does not support this operation"
+        "error": "Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons."
       },
       "reel": {
-        "views": 126,
-        "reach": 120,
-        "likes": 1,
-        "comments": 0,
-        "saved": 0,
-        "shares": 0,
-        "ig_reels_avg_watch_time": 1779
+        "error": "Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons."
       }
     },
     {
@@ -110,20 +72,10 @@
       "style": "how_to",
       "category": "",
       "post": {
-        "reach": 0,
-        "likes": 0,
-        "comments": 0,
-        "saved": 0,
-        "shares": 0
+        "error": "Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons."
       },
       "reel": {
-        "views": 0,
-        "reach": 0,
-        "likes": 0,
-        "comments": 0,
-        "saved": 0,
-        "shares": 0,
-        "ig_reels_avg_watch_time": 30954
+        "error": "Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons."
       }
     },
     {
@@ -132,20 +84,10 @@
       "style": "hot_take",
       "category": "",
       "post": {
-        "reach": 0,
-        "likes": 0,
-        "comments": 0,
-        "saved": 0,
-        "shares": 0
+        "error": "Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons."
       },
       "reel": {
-        "views": 20,
-        "reach": 18,
-        "likes": 0,
-        "comments": 0,
-        "saved": 0,
-        "shares": 0,
-        "ig_reels_avg_watch_time": 2092
+        "error": "Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons."
       }
     },
     {
@@ -154,20 +96,10 @@
       "style": "quick_tips",
       "category": "",
       "post": {
-        "reach": 0,
-        "likes": 0,
-        "comments": 0,
-        "saved": 0,
-        "shares": 0
+        "error": "Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons."
       },
       "reel": {
-        "views": 116,
-        "reach": 106,
-        "likes": 0,
-        "comments": 0,
-        "saved": 0,
-        "shares": 0,
-        "ig_reels_avg_watch_time": 1737
+        "error": "Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons."
       }
     },
     {
@@ -176,20 +108,10 @@
       "style": "myth_bust",
       "category": "",
       "post": {
-        "reach": 0,
-        "likes": 0,
-        "comments": 0,
-        "saved": 0,
-        "shares": 0
+        "error": "Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons."
       },
       "reel": {
-        "views": 5,
-        "reach": 4,
-        "likes": 0,
-        "comments": 0,
-        "saved": 0,
-        "shares": 0,
-        "ig_reels_avg_watch_time": 6133
+        "error": "Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons."
       }
     },
     {
@@ -198,20 +120,10 @@
       "style": "question_hook",
       "category": "",
       "post": {
-        "reach": 0,
-        "likes": 0,
-        "comments": 0,
-        "saved": 0,
-        "shares": 0
+        "error": "Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons."
       },
       "reel": {
-        "views": 3,
-        "reach": 3,
-        "likes": 0,
-        "comments": 0,
-        "saved": 0,
-        "shares": 0,
-        "ig_reels_avg_watch_time": 3769
+        "error": "Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons."
       }
     },
     {
@@ -220,20 +132,10 @@
       "style": "mini_story",
       "category": "",
       "post": {
-        "reach": 0,
-        "likes": 0,
-        "comments": 0,
-        "saved": 0,
-        "shares": 0
+        "error": "Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons."
       },
       "reel": {
-        "views": 3,
-        "reach": 3,
-        "likes": 0,
-        "comments": 0,
-        "saved": 0,
-        "shares": 0,
-        "ig_reels_avg_watch_time": 69882
+        "error": "Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons."
       }
     },
     {
@@ -242,20 +144,10 @@
       "style": "hot_take",
       "category": "",
       "post": {
-        "reach": 0,
-        "likes": 0,
-        "comments": 0,
-        "saved": 0,
-        "shares": 0
+        "error": "Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons."
       },
       "reel": {
-        "views": 7,
-        "reach": 7,
-        "likes": 0,
-        "comments": 0,
-        "saved": 0,
-        "shares": 0,
-        "ig_reels_avg_watch_time": 1971
+        "error": "Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons."
       }
     },
     {
@@ -264,20 +156,10 @@
       "style": "how_to",
       "category": "Event",
       "post": {
-        "reach": 0,
-        "likes": 0,
-        "comments": 0,
-        "saved": 0,
-        "shares": 0
+        "error": "Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons."
       },
       "reel": {
-        "views": 0,
-        "reach": 0,
-        "likes": 0,
-        "comments": 0,
-        "saved": 0,
-        "shares": 0,
-        "ig_reels_avg_watch_time": 188290
+        "error": "Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons."
       }
     },
     {
@@ -286,10 +168,10 @@
       "style": "stat_shock",
       "category": "Food",
       "post": {
-        "error": "Unsupported get request. Object with ID '17868938802586202' does not exist, cannot be loaded due to missing permissions, or does not support this operation"
+        "error": "Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons."
       },
       "reel": {
-        "error": "Unsupported get request. Object with ID '18221496349330502' does not exist, cannot be loaded due to missing permissions, or does not support this operation"
+        "error": "Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons."
       }
     },
     {
@@ -298,20 +180,10 @@
       "style": "question_hook",
       "category": "",
       "post": {
-        "reach": 0,
-        "likes": 0,
-        "comments": 0,
-        "saved": 0,
-        "shares": 0
+        "error": "Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons."
       },
       "reel": {
-        "views": 120,
-        "reach": 107,
-        "likes": 2,
-        "comments": 0,
-        "saved": 0,
-        "shares": 0,
-        "ig_reels_avg_watch_time": 1858
+        "error": "Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons."
       }
     },
     {
@@ -320,20 +192,10 @@
       "style": "mini_story",
       "category": "",
       "post": {
-        "reach": 0,
-        "likes": 0,
-        "comments": 0,
-        "saved": 0,
-        "shares": 0
+        "error": "Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons."
       },
       "reel": {
-        "views": 14,
-        "reach": 14,
-        "likes": 0,
-        "comments": 0,
-        "saved": 0,
-        "shares": 0,
-        "ig_reels_avg_watch_time": 1109
+        "error": "Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons."
       }
     },
     {
@@ -342,20 +204,10 @@
       "style": "how_to",
       "category": "",
       "post": {
-        "reach": 0,
-        "likes": 0,
-        "comments": 0,
-        "saved": 0,
-        "shares": 0
+        "error": "Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons."
       },
       "reel": {
-        "views": 114,
-        "reach": 110,
-        "likes": 0,
-        "comments": 0,
-        "saved": 0,
-        "shares": 0,
-        "ig_reels_avg_watch_time": 1407
+        "error": "Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons."
       }
     },
     {
@@ -364,20 +216,10 @@
       "style": "hot_take",
       "category": "",
       "post": {
-        "reach": 0,
-        "likes": 0,
-        "comments": 0,
-        "saved": 0,
-        "shares": 0
+        "error": "Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons."
       },
       "reel": {
-        "views": 94,
-        "reach": 91,
-        "likes": 1,
-        "comments": 0,
-        "saved": 0,
-        "shares": 0,
-        "ig_reels_avg_watch_time": 1278
+        "error": "Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons."
       }
     },
     {
@@ -386,20 +228,10 @@
       "style": "question_hook",
       "category": "",
       "post": {
-        "reach": 0,
-        "likes": 0,
-        "comments": 0,
-        "saved": 0,
-        "shares": 0
+        "error": "Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons."
       },
       "reel": {
-        "views": 9,
-        "reach": 8,
-        "likes": 0,
-        "comments": 0,
-        "saved": 0,
-        "shares": 0,
-        "ig_reels_avg_watch_time": 1453
+        "error": "Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons."
       }
     },
     {
@@ -408,20 +240,10 @@
       "style": "mini_story",
       "category": "",
       "post": {
-        "reach": 0,
-        "likes": 0,
-        "comments": 0,
-        "saved": 0,
-        "shares": 0
+        "error": "Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons."
       },
       "reel": {
-        "views": 31,
-        "reach": 31,
-        "likes": 0,
-        "comments": 0,
-        "saved": 1,
-        "shares": 0,
-        "ig_reels_avg_watch_time": 2507
+        "error": "Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons."
       }
     },
     {
@@ -430,20 +252,10 @@
       "style": "how_to",
       "category": "Technology",
       "post": {
-        "reach": 1,
-        "likes": 0,
-        "comments": 0,
-        "saved": 0,
-        "shares": 0
+        "error": "Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons."
       },
       "reel": {
-        "views": 10,
-        "reach": 9,
-        "likes": 0,
-        "comments": 0,
-        "saved": 0,
-        "shares": 0,
-        "ig_reels_avg_watch_time": 1270
+        "error": "Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons."
       }
     },
     {
@@ -452,20 +264,10 @@
       "style": "quick_tips",
       "category": "",
       "post": {
-        "reach": 0,
-        "likes": 0,
-        "comments": 0,
-        "saved": 0,
-        "shares": 0
+        "error": "Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons."
       },
       "reel": {
-        "views": 7,
-        "reach": 8,
-        "likes": 0,
-        "comments": 0,
-        "saved": 0,
-        "shares": 0,
-        "ig_reels_avg_watch_time": 2376
+        "error": "Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons."
       }
     },
     {
@@ -474,20 +276,10 @@
       "style": "myth_bust",
       "category": "",
       "post": {
-        "reach": 0,
-        "likes": 0,
-        "comments": 0,
-        "saved": 0,
-        "shares": 0
+        "error": "Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons."
       },
       "reel": {
-        "views": 37,
-        "reach": 35,
-        "likes": 0,
-        "comments": 0,
-        "saved": 0,
-        "shares": 0,
-        "ig_reels_avg_watch_time": 1019
+        "error": "Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons."
       }
     },
     {
@@ -496,20 +288,10 @@
       "style": "question_hook",
       "category": "",
       "post": {
-        "reach": 0,
-        "likes": 0,
-        "comments": 0,
-        "saved": 0,
-        "shares": 0
+        "error": "Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons."
       },
       "reel": {
-        "views": 11,
-        "reach": 13,
-        "likes": 0,
-        "comments": 0,
-        "saved": 0,
-        "shares": 0,
-        "ig_reels_avg_watch_time": 688
+        "error": "Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons."
       }
     },
     {
@@ -518,20 +300,10 @@
       "style": "stat_shock",
       "category": "Technology",
       "post": {
-        "reach": 0,
-        "likes": 0,
-        "comments": 0,
-        "saved": 0,
-        "shares": 0
+        "error": "Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons."
       },
       "reel": {
-        "views": 4,
-        "reach": 4,
-        "likes": 0,
-        "comments": 0,
-        "saved": 0,
-        "shares": 0,
-        "ig_reels_avg_watch_time": 2530
+        "error": "Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons."
       }
     },
     {
@@ -540,20 +312,10 @@
       "style": "mini_story",
       "category": "",
       "post": {
-        "reach": 0,
-        "likes": 0,
-        "comments": 0,
-        "saved": 0,
-        "shares": 0
+        "error": "Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons."
       },
       "reel": {
-        "views": 13,
-        "reach": 12,
-        "likes": 0,
-        "comments": 0,
-        "saved": 0,
-        "shares": 0,
-        "ig_reels_avg_watch_time": 866
+        "error": "Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons."
       }
     }
   ]

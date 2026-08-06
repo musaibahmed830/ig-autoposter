@@ -1,12 +1,7 @@
 {
-  "date": "2026-08-05",
-  "status": "falling",
-  "avg_recent": 16,
-  "avg_prev": 48,
-  "change_pct": -66.8,
-  "manual_audio_day": true,
-  "tips": [
-    "(Research fail hui: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. ', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}]}}) Fallback: pehle 2 second ka hook strong karo, trending audio manually lagao, share-able content banao."
-  ],
-  "verdict": "Reach gir raha hai. Aaj ki reel MANUALLY post karo — app se, trending audio laga ke (API se trending sound attach nahi hota). Neeche taaza research-based tips hain."
+  "date": "2026-08-06",
+  "status": "warming_up",
+  "verdict": "Data jama ho raha hai — kam az kam 6 din ke baad trend milega.",
+  "manual_audio_day": false,
+  "tips": []
 }
