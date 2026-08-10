@@ -1,69 +1,11 @@
 {
-  "updated": "2026-08-09T08:49:40.295442Z",
+  "updated": "2026-08-10T09:27:28.927622Z",
   "account": {
     "username": "technova.solutions",
-    "followers": 1,
-    "media_count": 58
+    "followers": 3,
+    "media_count": 66
   },
   "media": [
-    {
-      "date": "2026-07-30",
-      "topic": "How often should a brand really post?",
-      "style": "question_hook",
-      "category": "",
-      "post": {
-        "error": "Unsupported get request. Object with ID '18000947021972864' does not exist, cannot be loaded due to missing permissions, or does not support this operation"
-      },
-      "reel": {
-        "views": 35,
-        "reach": 35,
-        "likes": 0,
-        "comments": 0,
-        "saved": 0,
-        "shares": 0,
-        "ig_reels_avg_watch_time": 2535
-      }
-    },
-    {
-      "date": "2026-07-31",
-      "topic": "The real cost of NOT having a mobile app for your business in 2026",
-      "style": "how_to",
-      "category": "",
-      "post": {
-        "error": "Unsupported get request. Object with ID '18183353791366155' does not exist, cannot be loaded due to missing permissions, or does not support this operation"
-      },
-      "reel": {
-        "views": 0,
-        "reach": 0,
-        "likes": 0,
-        "comments": 0,
-        "saved": 0,
-        "shares": 0,
-        "ig_reels_avg_watch_time": 5294
-      }
-    },
-    {
-      "date": "2026-07-31",
-      "topic": "The real cost of NOT having a mobile app for your business in 2026",
-      "style": "hot_take",
-      "category": "",
-      "post": {
-        "reach": 0,
-        "likes": 0,
-        "comments": 0,
-        "saved": 0,
-        "shares": 0
-      },
-      "reel": {
-        "views": 0,
-        "reach": 0,
-        "likes": 0,
-        "comments": 0,
-        "saved": 0,
-        "shares": 0,
-        "ig_reels_avg_watch_time": 6181
-      }
-    },
     {
       "date": "2026-07-31",
       "topic": "5 signs your website is costing you customers instead of getting them",
@@ -620,6 +562,94 @@
         "saved": 0,
         "shares": 0,
         "ig_reels_avg_watch_time": 2907
+      }
+    },
+    {
+      "date": "2026-08-09",
+      "topic": "How slow websites are quietly killing your sales",
+      "style": "hot_take",
+      "category": "",
+      "post": {
+        "reach": 0,
+        "likes": 0,
+        "comments": 0,
+        "saved": 0,
+        "shares": 0
+      },
+      "reel": {
+        "views": 14,
+        "reach": 12,
+        "likes": 0,
+        "comments": 0,
+        "saved": 0,
+        "shares": 0,
+        "ig_reels_avg_watch_time": 1911
+      }
+    },
+    {
+      "date": "2026-08-09",
+      "topic": "Native vs cross-platform apps: what Karachi businesses should choose",
+      "style": "how_to",
+      "category": "Technology",
+      "post": {
+        "reach": 0,
+        "likes": 0,
+        "comments": 0,
+        "saved": 0,
+        "shares": 0
+      },
+      "reel": {
+        "views": 8,
+        "reach": 5,
+        "likes": 0,
+        "comments": 0,
+        "saved": 0,
+        "shares": 0,
+        "ig_reels_avg_watch_time": 6236
+      }
+    },
+    {
+      "date": "2026-08-09",
+      "topic": "3 signs your business has outgrown Excel and needs an ERP",
+      "style": "stat_shock",
+      "category": "Business",
+      "post": {
+        "reach": 1,
+        "likes": 0,
+        "comments": 0,
+        "saved": 0,
+        "shares": 0
+      },
+      "reel": {
+        "views": 112,
+        "reach": 100,
+        "likes": 3,
+        "comments": 0,
+        "saved": 0,
+        "shares": 0,
+        "ig_reels_avg_watch_time": 1210
+      }
+    },
+    {
+      "date": "2026-08-10",
+      "topic": "Why local businesses need a tech partner who understands them",
+      "style": "question_hook",
+      "category": "Technology",
+      "post": {
+        "reach": 0,
+        "likes": 0,
+        "comments": 0,
+        "saved": 0,
+        "shares": 0
+      },
+      "reel": {
+        "views": 0,
+        "reach": 0,
+        "likes": 0,
+        "comments": 0,
+        "saved": 0,
+        "shares": 0,
+        "ig_reels_avg_watch_time": 0
       }
     }
   ]
