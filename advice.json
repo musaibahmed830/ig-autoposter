@@ -1,10 +1,10 @@
 {
-  "date": "2026-08-10",
-  "status": "growing",
-  "avg_recent": 34,
-  "avg_prev": 16,
-  "change_pct": 109.8,
+  "date": "2026-08-11",
+  "status": "steady",
+  "avg_recent": 24,
+  "avg_prev": 26,
+  "change_pct": -6.6,
   "manual_audio_day": false,
   "tips": [],
-  "verdict": "Reach barh raha hai (+110%) — strategy kaam kar rahi hai, continue!"
+  "verdict": "Reach steady hai. Hooks par experiment karte raho."
 }

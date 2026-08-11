@@ -1,73 +1,11 @@
 {
-  "updated": "2026-08-10T09:27:28.927622Z",
+  "updated": "2026-08-11T09:03:27.031409Z",
   "account": {
     "username": "technova.solutions",
-    "followers": 3,
-    "media_count": 66
+    "followers": 2,
+    "media_count": 73
   },
   "media": [
-    {
-      "date": "2026-07-31",
-      "topic": "5 signs your website is costing you customers instead of getting them",
-      "style": "stat_shock",
-      "category": "",
-      "post": {
-        "reach": 0,
-        "likes": 0,
-        "comments": 0,
-        "saved": 0,
-        "shares": 0
-      },
-      "reel": {
-        "views": 18,
-        "reach": 17,
-        "likes": 0,
-        "comments": 0,
-        "saved": 0,
-        "shares": 0,
-        "ig_reels_avg_watch_time": 2120
-      }
-    },
-    {
-      "date": "2026-07-31",
-      "topic": "Why your first 3 words decide everything",
-      "style": "mini_story",
-      "category": "",
-      "post": {
-        "error": "Unsupported get request. Object with ID '18109295239824793' does not exist, cannot be loaded due to missing permissions, or does not support this operation"
-      },
-      "reel": {
-        "views": 126,
-        "reach": 120,
-        "likes": 1,
-        "comments": 0,
-        "saved": 0,
-        "shares": 0,
-        "ig_reels_avg_watch_time": 1779
-      }
-    },
-    {
-      "date": "2026-07-31",
-      "topic": "Saves and shares: the metrics IG rewards most",
-      "style": "how_to",
-      "category": "",
-      "post": {
-        "reach": 0,
-        "likes": 0,
-        "comments": 0,
-        "saved": 0,
-        "shares": 0
-      },
-      "reel": {
-        "views": 0,
-        "reach": 0,
-        "likes": 0,
-        "comments": 0,
-        "saved": 0,
-        "shares": 0,
-        "ig_reels_avg_watch_time": 30954
-      }
-    },
     {
       "date": "2026-07-31",
       "topic": "The biggest myth about custom software being too expensive",
@@ -577,13 +515,13 @@
         "shares": 0
       },
       "reel": {
-        "views": 14,
-        "reach": 12,
+        "views": 17,
+        "reach": 15,
         "likes": 0,
         "comments": 0,
         "saved": 0,
         "shares": 0,
-        "ig_reels_avg_watch_time": 1911
+        "ig_reels_avg_watch_time": 1742
       }
     },
     {
@@ -599,13 +537,13 @@
         "shares": 0
       },
       "reel": {
-        "views": 8,
-        "reach": 5,
+        "views": 13,
+        "reach": 10,
         "likes": 0,
         "comments": 0,
         "saved": 0,
         "shares": 0,
-        "ig_reels_avg_watch_time": 6236
+        "ig_reels_avg_watch_time": 4069
       }
     },
     {
@@ -621,8 +559,8 @@
         "shares": 0
       },
       "reel": {
-        "views": 112,
-        "reach": 100,
+        "views": 116,
+        "reach": 101,
         "likes": 3,
         "comments": 0,
         "saved": 0,
@@ -643,13 +581,79 @@
         "shares": 0
       },
       "reel": {
-        "views": 0,
-        "reach": 0,
+        "views": 8,
+        "reach": 9,
         "likes": 0,
         "comments": 0,
         "saved": 0,
         "shares": 0,
-        "ig_reels_avg_watch_time": 0
+        "ig_reels_avg_watch_time": 1562
+      }
+    },
+    {
+      "date": "2026-08-10",
+      "topic": "Why outdated software is more expensive than new software",
+      "style": "mini_story",
+      "category": "",
+      "post": {
+        "reach": 0,
+        "likes": 0,
+        "comments": 0,
+        "saved": 0,
+        "shares": 0
+      },
+      "reel": {
+        "views": 28,
+        "reach": 23,
+        "likes": 2,
+        "comments": 0,
+        "saved": 0,
+        "shares": 0,
+        "ig_reels_avg_watch_time": 1494
+      }
+    },
+    {
+      "date": "2026-08-10",
+      "topic": "How a booking or ordering app pays for itself in months",
+      "style": "how_to",
+      "category": "Technology",
+      "post": {
+        "reach": 0,
+        "likes": 0,
+        "comments": 0,
+        "saved": 0,
+        "shares": 0
+      },
+      "reel": {
+        "views": 5,
+        "reach": 4,
+        "likes": 0,
+        "comments": 0,
+        "saved": 0,
+        "shares": 0,
+        "ig_reels_avg_watch_time": 1430
+      }
+    },
+    {
+      "date": "2026-08-10",
+      "topic": "The real difference between a website and a web app",
+      "style": "stat_shock",
+      "category": "Technology",
+      "post": {
+        "reach": 0,
+        "likes": 0,
+        "comments": 0,
+        "saved": 0,
+        "shares": 0
+      },
+      "reel": {
+        "views": 9,
+        "reach": 8,
+        "likes": 1,
+        "comments": 0,
+        "saved": 0,
+        "shares": 0,
+        "ig_reels_avg_watch_time": 2907
       }
     }
   ]
