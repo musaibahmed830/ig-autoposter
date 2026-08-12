@@ -1,33 +1,11 @@
 {
-  "updated": "2026-08-11T09:03:27.031409Z",
+  "updated": "2026-08-12T09:16:09.660719Z",
   "account": {
     "username": "technova.solutions",
     "followers": 2,
-    "media_count": 73
+    "media_count": 81
   },
   "media": [
-    {
-      "date": "2026-07-31",
-      "topic": "The biggest myth about custom software being too expensive",
-      "style": "hot_take",
-      "category": "",
-      "post": {
-        "reach": 0,
-        "likes": 0,
-        "comments": 0,
-        "saved": 0,
-        "shares": 0
-      },
-      "reel": {
-        "views": 20,
-        "reach": 18,
-        "likes": 0,
-        "comments": 0,
-        "saved": 0,
-        "shares": 0,
-        "ig_reels_avg_watch_time": 2092
-      }
-    },
     {
       "date": "2026-08-01",
       "topic": "How UI/UX design directly affects sales",
@@ -603,13 +581,13 @@
         "shares": 0
       },
       "reel": {
-        "views": 28,
-        "reach": 23,
+        "views": 39,
+        "reach": 33,
         "likes": 2,
         "comments": 0,
         "saved": 0,
         "shares": 0,
-        "ig_reels_avg_watch_time": 1494
+        "ig_reels_avg_watch_time": 1334
       }
     },
     {
@@ -625,13 +603,13 @@
         "shares": 0
       },
       "reel": {
-        "views": 5,
-        "reach": 4,
-        "likes": 0,
+        "views": 10,
+        "reach": 9,
+        "likes": 1,
         "comments": 0,
         "saved": 0,
         "shares": 0,
-        "ig_reels_avg_watch_time": 1430
+        "ig_reels_avg_watch_time": 1116
       }
     },
     {
@@ -647,13 +625,35 @@
         "shares": 0
       },
       "reel": {
-        "views": 9,
-        "reach": 8,
+        "views": 18,
+        "reach": 16,
         "likes": 1,
         "comments": 0,
         "saved": 0,
         "shares": 0,
-        "ig_reels_avg_watch_time": 2907
+        "ig_reels_avg_watch_time": 2174
+      }
+    },
+    {
+      "date": "2026-08-11",
+      "topic": "3 questions to ask before hiring a software company",
+      "style": "myth_bust",
+      "category": "Technology",
+      "post": {
+        "reach": 0,
+        "likes": 0,
+        "comments": 0,
+        "saved": 0,
+        "shares": 0
+      },
+      "reel": {
+        "views": 5,
+        "reach": 4,
+        "likes": 0,
+        "comments": 0,
+        "saved": 0,
+        "shares": 0,
+        "ig_reels_avg_watch_time": 1089
       }
     }
   ]
