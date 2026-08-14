@@ -1,33 +1,11 @@
 {
-  "updated": "2026-08-13T09:17:19.700416Z",
+  "updated": "2026-08-14T09:12:00.613845Z",
   "account": {
     "username": "technova.solutions",
     "followers": 3,
-    "media_count": 86
+    "media_count": 89
   },
   "media": [
-    {
-      "date": "2026-08-01",
-      "topic": "The difference between a freelancer and a software house",
-      "style": "question_hook",
-      "category": "",
-      "post": {
-        "reach": 0,
-        "likes": 0,
-        "comments": 0,
-        "saved": 0,
-        "shares": 0
-      },
-      "reel": {
-        "views": 3,
-        "reach": 3,
-        "likes": 0,
-        "comments": 0,
-        "saved": 0,
-        "shares": 0,
-        "ig_reels_avg_watch_time": 3769
-      }
-    },
     {
       "date": "2026-08-01",
       "topic": "How to future-proof your business with the right tech stack",
@@ -647,13 +625,35 @@
         "shares": 0
       },
       "reel": {
-        "views": 4,
-        "reach": 4,
+        "views": 5,
+        "reach": 5,
         "likes": 0,
         "comments": 0,
         "saved": 0,
         "shares": 0,
-        "ig_reels_avg_watch_time": 699
+        "ig_reels_avg_watch_time": 717
+      }
+    },
+    {
+      "date": "2026-08-13",
+      "topic": "Why businesses need both a website and an app \u2014 not just one",
+      "style": "stat_shock",
+      "category": "",
+      "post": {
+        "reach": 0,
+        "likes": 0,
+        "comments": 0,
+        "saved": 0,
+        "shares": 0
+      },
+      "reel": {
+        "views": 2,
+        "reach": 2,
+        "likes": 0,
+        "comments": 0,
+        "saved": 0,
+        "shares": 0,
+        "ig_reels_avg_watch_time": 594
       }
     }
   ]
