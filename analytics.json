@@ -1,33 +1,11 @@
 {
-  "updated": "2026-09-19T12:22:23.094367Z",
+  "updated": "2026-09-20T12:57:17.989414Z",
   "account": {
     "username": "technova.solutions",
     "followers": 3,
-    "media_count": 92
+    "media_count": 94
   },
   "media": [
-    {
-      "date": "2026-08-01",
-      "topic": "How to future-proof your business with the right tech stack",
-      "style": "mini_story",
-      "category": "",
-      "post": {
-        "reach": 0,
-        "likes": 0,
-        "comments": 0,
-        "saved": 0,
-        "shares": 0
-      },
-      "reel": {
-        "views": 3,
-        "reach": 3,
-        "likes": 0,
-        "comments": 0,
-        "saved": 0,
-        "shares": 0,
-        "ig_reels_avg_watch_time": 69882
-      }
-    },
     {
       "date": "2026-08-02",
       "topic": "Advertisement of mobile app",
@@ -654,6 +632,28 @@
         "saved": 0,
         "shares": 0,
         "ig_reels_avg_watch_time": 1062
+      }
+    },
+    {
+      "date": "2026-09-19",
+      "topic": "Why scalability matters more than a quick-fix solution",
+      "style": "hot_take",
+      "category": "",
+      "post": {
+        "reach": 0,
+        "likes": 0,
+        "comments": 0,
+        "saved": 0,
+        "shares": 0
+      },
+      "reel": {
+        "views": 16,
+        "reach": 14,
+        "likes": 0,
+        "comments": 0,
+        "saved": 0,
+        "shares": 0,
+        "ig_reels_avg_watch_time": 1321
       }
     }
   ]
