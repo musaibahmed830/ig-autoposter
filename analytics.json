@@ -1,33 +1,11 @@
 {
-  "updated": "2026-09-27T13:43:01.860499Z",
+  "updated": "2026-09-28T16:36:57.265386Z",
   "account": {
     "username": "technova.solutions",
     "followers": 3,
-    "media_count": 94
+    "media_count": 96
   },
   "media": [
-    {
-      "date": "2026-08-02",
-      "topic": "Advertisement of mobile app",
-      "style": "hot_take",
-      "category": "",
-      "post": {
-        "reach": 0,
-        "likes": 0,
-        "comments": 0,
-        "saved": 0,
-        "shares": 0
-      },
-      "reel": {
-        "views": 7,
-        "reach": 7,
-        "likes": 0,
-        "comments": 0,
-        "saved": 0,
-        "shares": 0,
-        "ig_reels_avg_watch_time": 1971
-      }
-    },
     {
       "date": "2026-08-02",
       "topic": "upto 74 percent azadi sale or web and app development due to 14 august independence day of pakistan and theme of the post is green",
@@ -654,6 +632,28 @@
         "saved": 0,
         "shares": 0,
         "ig_reels_avg_watch_time": 1266
+      }
+    },
+    {
+      "date": "2026-09-27",
+      "topic": "The difference between a landing page and a real business website",
+      "style": "how_to",
+      "category": "",
+      "post": {
+        "reach": 0,
+        "likes": 0,
+        "comments": 0,
+        "saved": 0,
+        "shares": 0
+      },
+      "reel": {
+        "views": 2,
+        "reach": 2,
+        "likes": 0,
+        "comments": 0,
+        "saved": 0,
+        "shares": 0,
+        "ig_reels_avg_watch_time": 324
       }
     }
   ]
