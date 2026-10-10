@@ -2,7 +2,7 @@
 Roz ka content (Gemini API, free tier) — variety engine ke plan ke mutabiq:
 har din alag topic + alag content style (tips/myth/story/stat...).
 """
-import os, json
+import os, json, time
 from google import genai
 from google.genai import types
 from variety import todays_plan
@@ -82,14 +82,27 @@ Write Instagram content in {lang}. Respond with ONLY a JSON object, no markdown 
 - "headline_big": 1-4 word punchy takeaway that completes the headline_small phrase, this is the big bold hero word(s) (e.g. "REIMAGINED" or "IT FOUNDATION").
 - "panel_text": one short punchy sentence (under 14 words) summarizing the value prop, for a highlighted info box on the image.
 """
-    resp = client.models.generate_content(
-        model="gemini-flash-latest",
-        contents=prompt,
-        config=types.GenerateContentConfig(
-            max_output_tokens=3000,
-            response_mime_type="application/json",
-        ),
-    )
+    # 503 UNAVAILABLE temporary hota hai — exponential backoff se retry karo
+    for attempt in range(5):
+        try:
+            resp = client.models.generate_content(
+                model="gemini-flash-latest",
+                contents=prompt,
+                config=types.GenerateContentConfig(
+                    max_output_tokens=3000,
+                    response_mime_type="application/json",
+                ),
+            )
+            break  # success
+        except Exception as e:
+            if "503" in str(e) or "UNAVAILABLE" in str(e):
+                wait = min(10 * 2 ** attempt, 30)  # 10s, 20s, 30s, 30s, 30s
+                print(f"Gemini 503 — attempt {attempt+1}/5, {wait}s baad retry...")
+                time.sleep(wait)
+            else:
+                raise  # koi aur error hai toh seedha raise karo
+    else:
+        raise RuntimeError("Gemini API 5 attempts ke baad bhi 503 de raha hai. Baad mein try karo.")
     data = json.loads(resp.text.replace("```json", "").replace("```", "").strip())
     data["hashtags"] = data.get("hashtags", [])[:15]
     data["slides"] = (data.get("slides", []) + [plan["topic"]] * n)[:n]

@@ -21,6 +21,42 @@ IG_ID = os.environ["IG_USER_ID"]
 TOKEN = os.environ["IG_ACCESS_TOKEN"]
 
 
+def refresh_token_if_needed():
+    """
+    Instagram long-lived token ko refresh karta hai (60 din mein expire hota hai).
+    Har run par refresh karo — API sirf naya token deta hai agar valid ho,
+    warna error clearly print hoti hai taake GitHub Secret update ho sake.
+    """
+    global TOKEN
+    print("🔄 Checking / refreshing Instagram access token...")
+    r = requests.get(
+        "https://graph.instagram.com/refresh_access_token",
+        params={"grant_type": "ig_refresh_token", "access_token": TOKEN},
+        timeout=30,
+    )
+    if not r.ok:
+        try:
+            detail = r.json()
+        except ValueError:
+            detail = r.text
+        print(f"⚠️  Token refresh failed ({r.status_code}): {detail}")
+        print("👉 Action required: GitHub repo → Settings → Secrets → IG_ACCESS_TOKEN update karo.")
+        print("   Naya token: https://developers.facebook.com/tools/explorer")
+        # Don't crash here — try publishing with existing token; it will fail with a clear error
+        return
+    data = r.json()
+    new_token = data.get("access_token", TOKEN)
+    expires_in = data.get("expires_in", 0)
+    days_left = expires_in // 86400
+    TOKEN = new_token
+    print(f"✅ Token refreshed — {days_left} days remaining.")
+    if days_left < 10:
+        print(f"⚠️  Token {days_left} din mein expire hoga! GitHub Secret update karo:")
+        print(f"   New token: {new_token}")
+    elif new_token != os.environ["IG_ACCESS_TOKEN"]:
+        print(f"ℹ️  New token issued (copy to GitHub Secret IG_ACCESS_TOKEN):\n   {new_token}")
+
+
 def _check(r):
     """raise_for_status() sirf status code deta hai — Meta ka asli error message
     (invalid token, permissions, rate limit, etc.) response body mein hota hai,
@@ -93,9 +129,12 @@ def publish_reel(video_url, caption):
 
 
 def main():
+    refresh_token_if_needed()  # Token expiry se pehle refresh karo
+
     with open(os.path.join(OUT, "content.json")) as f:
         c = json.load(f)
     caption = c["caption"] + "\n.\n.\n" + " ".join("#" + h for h in c["hashtags"])
+
 
     print("Uploading media to Cloudinary...")
     img_url = cloudinary_upload(os.path.join(OUT, "post.jpg"), "image")
