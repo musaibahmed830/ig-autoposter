@@ -1,67 +1,11 @@
 {
-  "updated": "2026-10-11T14:47:54.856739Z",
+  "updated": "2026-10-12T17:36:14.068832Z",
   "account": {
     "username": "technova.solutions",
     "followers": 3,
-    "media_count": 98
+    "media_count": 104
   },
   "media": [
-    {
-      "date": "2026-08-02",
-      "topic": "Brand Name Piyya Virus promte thier special geny virus pizza post",
-      "style": "stat_shock",
-      "category": "Food",
-      "post": {
-        "error": "Unsupported get request. Object with ID '17868938802586202' does not exist, cannot be loaded due to missing permissions, or does not support this operation"
-      },
-      "reel": {
-        "error": "Unsupported get request. Object with ID '18221496349330502' does not exist, cannot be loaded due to missing permissions, or does not support this operation"
-      }
-    },
-    {
-      "date": "2026-08-02",
-      "topic": "What makes a mobile app actually get downloaded and used",
-      "style": "question_hook",
-      "category": "",
-      "post": {
-        "reach": 0,
-        "likes": 0,
-        "comments": 0,
-        "saved": 0,
-        "shares": 0
-      },
-      "reel": {
-        "views": 120,
-        "reach": 107,
-        "likes": 2,
-        "comments": 0,
-        "saved": 0,
-        "shares": 0,
-        "ig_reels_avg_watch_time": 1858
-      }
-    },
-    {
-      "date": "2026-08-02",
-      "topic": "Signs your business processes need software, not more people",
-      "style": "mini_story",
-      "category": "",
-      "post": {
-        "reach": 0,
-        "likes": 0,
-        "comments": 0,
-        "saved": 0,
-        "shares": 0
-      },
-      "reel": {
-        "views": 14,
-        "reach": 14,
-        "likes": 0,
-        "comments": 0,
-        "saved": 0,
-        "shares": 0,
-        "ig_reels_avg_watch_time": 1109
-      }
-    },
     {
       "date": "2026-08-02",
       "topic": "Why a professional website builds trust before the first call",
@@ -654,6 +598,72 @@
         "saved": 0,
         "shares": 0,
         "ig_reels_avg_watch_time": 5112
+      }
+    },
+    {
+      "date": "2026-10-11",
+      "topic": "How a custom ERP cuts operational costs in half",
+      "style": "myth_bust",
+      "category": "",
+      "post": {
+        "reach": 0,
+        "likes": 0,
+        "comments": 0,
+        "saved": 0,
+        "shares": 0
+      },
+      "reel": {
+        "views": 4,
+        "reach": 3,
+        "likes": 0,
+        "comments": 0,
+        "saved": 0,
+        "shares": 0,
+        "ig_reels_avg_watch_time": 719
+      }
+    },
+    {
+      "date": "2026-10-11",
+      "topic": "Mobile-first design: why it's non-negotiable in 2026",
+      "style": "mini_story",
+      "category": "",
+      "post": {
+        "reach": 0,
+        "likes": 0,
+        "comments": 0,
+        "saved": 0,
+        "shares": 0
+      },
+      "reel": {
+        "views": 1,
+        "reach": 1,
+        "likes": 0,
+        "comments": 0,
+        "saved": 0,
+        "shares": 0,
+        "ig_reels_avg_watch_time": 732
+      }
+    },
+    {
+      "date": "2026-10-12",
+      "topic": "The truth about no-code website builders for growing businesses",
+      "style": "how_to",
+      "category": "",
+      "post": {
+        "reach": 0,
+        "likes": 0,
+        "comments": 0,
+        "saved": 0,
+        "shares": 0
+      },
+      "reel": {
+        "views": 25,
+        "reach": 17,
+        "likes": 0,
+        "comments": 0,
+        "saved": 0,
+        "shares": 0,
+        "ig_reels_avg_watch_time": 655
       }
     }
   ]
