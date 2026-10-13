@@ -1,33 +1,11 @@
 {
-  "updated": "2026-10-12T17:36:14.068832Z",
+  "updated": "2026-10-13T15:45:14.722125Z",
   "account": {
     "username": "technova.solutions",
     "followers": 3,
-    "media_count": 104
+    "media_count": 107
   },
   "media": [
-    {
-      "date": "2026-08-02",
-      "topic": "Why a professional website builds trust before the first call",
-      "style": "how_to",
-      "category": "",
-      "post": {
-        "reach": 0,
-        "likes": 0,
-        "comments": 0,
-        "saved": 0,
-        "shares": 0
-      },
-      "reel": {
-        "views": 114,
-        "reach": 110,
-        "likes": 0,
-        "comments": 0,
-        "saved": 0,
-        "shares": 0,
-        "ig_reels_avg_watch_time": 1407
-      }
-    },
     {
       "date": "2026-08-02",
       "topic": "How to increase business",
@@ -650,6 +628,28 @@
       "style": "how_to",
       "category": "",
       "post": {
+        "reach": 1,
+        "likes": 0,
+        "comments": 0,
+        "saved": 0,
+        "shares": 0
+      },
+      "reel": {
+        "views": 65,
+        "reach": 57,
+        "likes": 0,
+        "comments": 0,
+        "saved": 0,
+        "shares": 0,
+        "ig_reels_avg_watch_time": 1079
+      }
+    },
+    {
+      "date": "2026-10-12",
+      "topic": "How a mobile app builds customer loyalty better than social media alone",
+      "style": "stat_shock",
+      "category": "",
+      "post": {
         "reach": 0,
         "likes": 0,
         "comments": 0,
@@ -657,13 +657,13 @@
         "shares": 0
       },
       "reel": {
-        "views": 25,
-        "reach": 17,
+        "views": 0,
+        "reach": 0,
         "likes": 0,
         "comments": 0,
         "saved": 0,
         "shares": 0,
-        "ig_reels_avg_watch_time": 655
+        "ig_reels_avg_watch_time": 0
       }
     }
   ]
