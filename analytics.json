@@ -1,33 +1,11 @@
 {
-  "updated": "2026-10-13T15:45:14.722125Z",
+  "updated": "2026-10-14T13:28:09.764549Z",
   "account": {
     "username": "technova.solutions",
     "followers": 3,
-    "media_count": 107
+    "media_count": 109
   },
   "media": [
-    {
-      "date": "2026-08-02",
-      "topic": "How to increase business",
-      "style": "hot_take",
-      "category": "",
-      "post": {
-        "reach": 0,
-        "likes": 0,
-        "comments": 0,
-        "saved": 0,
-        "shares": 0
-      },
-      "reel": {
-        "views": 94,
-        "reach": 91,
-        "likes": 1,
-        "comments": 0,
-        "saved": 0,
-        "shares": 0,
-        "ig_reels_avg_watch_time": 1278
-      }
-    },
     {
       "date": "2026-08-02",
       "topic": "How ERP connects sales, inventory, and finance in one place",
@@ -664,6 +642,28 @@
         "saved": 0,
         "shares": 0,
         "ig_reels_avg_watch_time": 0
+      }
+    },
+    {
+      "date": "2026-10-13",
+      "topic": "How TechNova approaches every project: idea to launch",
+      "style": "quick_tips",
+      "category": "",
+      "post": {
+        "reach": 0,
+        "likes": 0,
+        "comments": 0,
+        "saved": 0,
+        "shares": 0
+      },
+      "reel": {
+        "views": 7,
+        "reach": 4,
+        "likes": 0,
+        "comments": 0,
+        "saved": 0,
+        "shares": 0,
+        "ig_reels_avg_watch_time": 1484
       }
     }
   ]
