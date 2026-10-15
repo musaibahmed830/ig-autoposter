@@ -1,33 +1,11 @@
 {
-  "updated": "2026-10-14T13:28:09.764549Z",
+  "updated": "2026-10-15T13:12:22.543041Z",
   "account": {
     "username": "technova.solutions",
     "followers": 3,
-    "media_count": 109
+    "media_count": 111
   },
   "media": [
-    {
-      "date": "2026-08-02",
-      "topic": "How ERP connects sales, inventory, and finance in one place",
-      "style": "question_hook",
-      "category": "",
-      "post": {
-        "reach": 0,
-        "likes": 0,
-        "comments": 0,
-        "saved": 0,
-        "shares": 0
-      },
-      "reel": {
-        "views": 9,
-        "reach": 8,
-        "likes": 0,
-        "comments": 0,
-        "saved": 0,
-        "shares": 0,
-        "ig_reels_avg_watch_time": 1453
-      }
-    },
     {
       "date": "2026-08-02",
       "topic": "Why businesses in Karachi are going digital faster than ever",
@@ -657,13 +635,35 @@
         "shares": 0
       },
       "reel": {
-        "views": 7,
-        "reach": 4,
+        "views": 8,
+        "reach": 5,
         "likes": 0,
         "comments": 0,
         "saved": 0,
         "shares": 0,
-        "ig_reels_avg_watch_time": 1484
+        "ig_reels_avg_watch_time": 1431
+      }
+    },
+    {
+      "date": "2026-10-14",
+      "topic": "The real cost of not having a mobile app in 2026",
+      "style": "question_hook",
+      "category": "",
+      "post": {
+        "reach": 0,
+        "likes": 0,
+        "comments": 0,
+        "saved": 0,
+        "shares": 0
+      },
+      "reel": {
+        "views": 0,
+        "reach": 0,
+        "likes": 0,
+        "comments": 0,
+        "saved": 0,
+        "shares": 0,
+        "ig_reels_avg_watch_time": 0
       }
     }
   ]
