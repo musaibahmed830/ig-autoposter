@@ -1,55 +1,11 @@
 {
-  "updated": "2026-10-15T13:12:22.543041Z",
+  "updated": "2026-10-16T13:06:18.966555Z",
   "account": {
     "username": "technova.solutions",
     "followers": 3,
-    "media_count": 111
+    "media_count": 115
   },
   "media": [
-    {
-      "date": "2026-08-02",
-      "topic": "Why businesses in Karachi are going digital faster than ever",
-      "style": "mini_story",
-      "category": "",
-      "post": {
-        "reach": 0,
-        "likes": 0,
-        "comments": 0,
-        "saved": 0,
-        "shares": 0
-      },
-      "reel": {
-        "views": 31,
-        "reach": 31,
-        "likes": 0,
-        "comments": 0,
-        "saved": 1,
-        "shares": 0,
-        "ig_reels_avg_watch_time": 2507
-      }
-    },
-    {
-      "date": "2026-08-02",
-      "topic": "AI future",
-      "style": "how_to",
-      "category": "Technology",
-      "post": {
-        "reach": 1,
-        "likes": 0,
-        "comments": 0,
-        "saved": 0,
-        "shares": 0
-      },
-      "reel": {
-        "views": 10,
-        "reach": 9,
-        "likes": 0,
-        "comments": 0,
-        "saved": 0,
-        "shares": 0,
-        "ig_reels_avg_watch_time": 1270
-      }
-    },
     {
       "date": "2026-08-03",
       "topic": "How a broken checkout page is costing you sales right now",
@@ -648,6 +604,50 @@
       "date": "2026-10-14",
       "topic": "The real cost of not having a mobile app in 2026",
       "style": "question_hook",
+      "category": "",
+      "post": {
+        "reach": 0,
+        "likes": 0,
+        "comments": 0,
+        "saved": 0,
+        "shares": 0
+      },
+      "reel": {
+        "views": 0,
+        "reach": 0,
+        "likes": 0,
+        "comments": 0,
+        "saved": 0,
+        "shares": 0,
+        "ig_reels_avg_watch_time": 0
+      }
+    },
+    {
+      "date": "2026-10-15",
+      "topic": "Why ERP beats spreadsheets for growing businesses",
+      "style": "how_to",
+      "category": "",
+      "post": {
+        "reach": 0,
+        "likes": 0,
+        "comments": 0,
+        "saved": 0,
+        "shares": 0
+      },
+      "reel": {
+        "views": 5,
+        "reach": 4,
+        "likes": 0,
+        "comments": 0,
+        "saved": 0,
+        "shares": 0,
+        "ig_reels_avg_watch_time": 1072
+      }
+    },
+    {
+      "date": "2026-10-15",
+      "topic": "Custom software vs off-the-shelf: which one saves money long-term",
+      "style": "stat_shock",
       "category": "",
       "post": {
         "reach": 0,
