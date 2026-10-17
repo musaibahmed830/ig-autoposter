@@ -1,33 +1,11 @@
 {
-  "updated": "2026-10-16T13:06:18.966555Z",
+  "updated": "2026-10-17T12:03:05.888431Z",
   "account": {
     "username": "technova.solutions",
     "followers": 3,
-    "media_count": 115
+    "media_count": 117
   },
   "media": [
-    {
-      "date": "2026-08-03",
-      "topic": "How a broken checkout page is costing you sales right now",
-      "style": "quick_tips",
-      "category": "",
-      "post": {
-        "reach": 0,
-        "likes": 0,
-        "comments": 0,
-        "saved": 0,
-        "shares": 0
-      },
-      "reel": {
-        "views": 7,
-        "reach": 8,
-        "likes": 0,
-        "comments": 0,
-        "saved": 0,
-        "shares": 0,
-        "ig_reels_avg_watch_time": 2376
-      }
-    },
     {
       "date": "2026-08-03",
       "topic": "Why 'build it and they will come' doesn't work for apps",
@@ -664,6 +642,28 @@
         "saved": 0,
         "shares": 0,
         "ig_reels_avg_watch_time": 0
+      }
+    },
+    {
+      "date": "2026-10-16",
+      "topic": "What a discovery call with a software house actually looks like",
+      "style": "quick_tips",
+      "category": "",
+      "post": {
+        "reach": 0,
+        "likes": 0,
+        "comments": 0,
+        "saved": 0,
+        "shares": 0
+      },
+      "reel": {
+        "views": 5,
+        "reach": 4,
+        "likes": 0,
+        "comments": 0,
+        "saved": 0,
+        "shares": 0,
+        "ig_reels_avg_watch_time": 858
       }
     }
   ]
