@@ -1,55 +1,11 @@
 {
-  "updated": "2026-10-17T12:03:05.888431Z",
+  "updated": "2026-10-18T12:31:26.929390Z",
   "account": {
     "username": "technova.solutions",
     "followers": 3,
-    "media_count": 117
+    "media_count": 121
   },
   "media": [
-    {
-      "date": "2026-08-03",
-      "topic": "Why 'build it and they will come' doesn't work for apps",
-      "style": "myth_bust",
-      "category": "",
-      "post": {
-        "reach": 0,
-        "likes": 0,
-        "comments": 0,
-        "saved": 0,
-        "shares": 0
-      },
-      "reel": {
-        "views": 37,
-        "reach": 35,
-        "likes": 0,
-        "comments": 0,
-        "saved": 0,
-        "shares": 0,
-        "ig_reels_avg_watch_time": 1142
-      }
-    },
-    {
-      "date": "2026-08-03",
-      "topic": "What separates a good ERP from a great one",
-      "style": "question_hook",
-      "category": "",
-      "post": {
-        "reach": 0,
-        "likes": 0,
-        "comments": 0,
-        "saved": 0,
-        "shares": 0
-      },
-      "reel": {
-        "views": 11,
-        "reach": 13,
-        "likes": 0,
-        "comments": 0,
-        "saved": 0,
-        "shares": 0,
-        "ig_reels_avg_watch_time": 725
-      }
-    },
     {
       "date": "2026-08-04",
       "topic": "Future of Ai",
@@ -657,13 +613,57 @@
         "shares": 0
       },
       "reel": {
-        "views": 5,
-        "reach": 4,
+        "views": 17,
+        "reach": 14,
         "likes": 0,
         "comments": 0,
         "saved": 0,
         "shares": 0,
-        "ig_reels_avg_watch_time": 858
+        "ig_reels_avg_watch_time": 2498
+      }
+    },
+    {
+      "date": "2026-10-17",
+      "topic": "How automation saves 10+ hours a week for business owners",
+      "style": "question_hook",
+      "category": "",
+      "post": {
+        "reach": 0,
+        "likes": 0,
+        "comments": 0,
+        "saved": 0,
+        "shares": 0
+      },
+      "reel": {
+        "views": 45,
+        "reach": 43,
+        "likes": 0,
+        "comments": 0,
+        "saved": 0,
+        "shares": 0,
+        "ig_reels_avg_watch_time": 1159
+      }
+    },
+    {
+      "date": "2026-10-17",
+      "topic": "Why your competitors' apps are stealing your customers",
+      "style": "mini_story",
+      "category": "",
+      "post": {
+        "reach": 0,
+        "likes": 0,
+        "comments": 0,
+        "saved": 0,
+        "shares": 0
+      },
+      "reel": {
+        "views": 1,
+        "reach": 1,
+        "likes": 0,
+        "comments": 0,
+        "saved": 0,
+        "shares": 0,
+        "ig_reels_avg_watch_time": 514
       }
     }
   ]
