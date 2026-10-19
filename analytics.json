@@ -1,33 +1,11 @@
 {
-  "updated": "2026-10-18T12:31:26.929390Z",
+  "updated": "2026-10-19T15:23:54.612229Z",
   "account": {
     "username": "technova.solutions",
     "followers": 3,
-    "media_count": 121
+    "media_count": 123
   },
   "media": [
-    {
-      "date": "2026-08-04",
-      "topic": "Future of Ai",
-      "style": "stat_shock",
-      "category": "Technology",
-      "post": {
-        "reach": 1,
-        "likes": 0,
-        "comments": 0,
-        "saved": 0,
-        "shares": 0
-      },
-      "reel": {
-        "views": 4,
-        "reach": 4,
-        "likes": 0,
-        "comments": 0,
-        "saved": 0,
-        "shares": 0,
-        "ig_reels_avg_watch_time": 2350
-      }
-    },
     {
       "date": "2026-08-04",
       "topic": "The one question every business owner should ask about their software",
@@ -664,6 +642,28 @@
         "saved": 0,
         "shares": 0,
         "ig_reels_avg_watch_time": 514
+      }
+    },
+    {
+      "date": "2026-10-18",
+      "topic": "The biggest myth about custom software being too expensive",
+      "style": "stat_shock",
+      "category": "",
+      "post": {
+        "reach": 0,
+        "likes": 0,
+        "comments": 0,
+        "saved": 0,
+        "shares": 0
+      },
+      "reel": {
+        "views": 71,
+        "reach": 67,
+        "likes": 0,
+        "comments": 0,
+        "saved": 0,
+        "shares": 0,
+        "ig_reels_avg_watch_time": 765
       }
     }
   ]
