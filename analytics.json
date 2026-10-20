@@ -1,8 +1,8 @@
 {
-  "updated": "2026-10-19T15:23:54.612229Z",
+  "updated": "2026-10-20T13:26:49.841177Z",
   "account": {
     "username": "technova.solutions",
-    "followers": 3,
+    "followers": 4,
     "media_count": 123
   },
   "media": [
@@ -650,20 +650,20 @@
       "style": "stat_shock",
       "category": "",
       "post": {
-        "reach": 0,
+        "reach": 1,
         "likes": 0,
         "comments": 0,
         "saved": 0,
         "shares": 0
       },
       "reel": {
-        "views": 71,
-        "reach": 67,
+        "views": 73,
+        "reach": 69,
         "likes": 0,
         "comments": 0,
         "saved": 0,
         "shares": 0,
-        "ig_reels_avg_watch_time": 765
+        "ig_reels_avg_watch_time": 793
       }
     }
   ]
