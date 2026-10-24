@@ -1,33 +1,11 @@
 {
-  "updated": "2026-10-23T13:13:59.018051Z",
+  "updated": "2026-10-24T12:31:34.745805Z",
   "account": {
     "username": "technova.solutions",
     "followers": 7,
-    "media_count": 127
+    "media_count": 129
   },
   "media": [
-    {
-      "date": "2026-08-07",
-      "topic": "Signs it's time to rebuild your outdated website",
-      "style": "myth_bust",
-      "category": "",
-      "post": {
-        "reach": 0,
-        "likes": 0,
-        "comments": 0,
-        "saved": 0,
-        "shares": 0
-      },
-      "reel": {
-        "views": 114,
-        "reach": 110,
-        "likes": 0,
-        "comments": 0,
-        "saved": 0,
-        "shares": 0,
-        "ig_reels_avg_watch_time": 1077
-      }
-    },
     {
       "date": "2026-08-07",
       "topic": "Why fast-loading websites win more customers",
@@ -606,7 +584,7 @@
       "style": "stat_shock",
       "category": "",
       "post": {
-        "reach": 1,
+        "reach": 2,
         "likes": 0,
         "comments": 0,
         "saved": 0,
@@ -614,7 +592,7 @@
       },
       "reel": {
         "views": 74,
-        "reach": 69,
+        "reach": 70,
         "likes": 0,
         "comments": 0,
         "saved": 0,
@@ -664,6 +642,28 @@
         "saved": 0,
         "shares": 0,
         "ig_reels_avg_watch_time": 1020
+      }
+    },
+    {
+      "date": "2026-10-23",
+      "topic": "5 signs your business website is losing you customers",
+      "style": "myth_bust",
+      "category": "",
+      "post": {
+        "reach": 0,
+        "likes": 0,
+        "comments": 0,
+        "saved": 0,
+        "shares": 0
+      },
+      "reel": {
+        "views": 2,
+        "reach": 2,
+        "likes": 0,
+        "comments": 0,
+        "saved": 0,
+        "shares": 0,
+        "ig_reels_avg_watch_time": 606
       }
     }
   ]
