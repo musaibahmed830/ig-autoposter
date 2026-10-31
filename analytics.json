@@ -1,33 +1,11 @@
 {
-  "updated": "2026-10-30T14:56:14.799013Z",
+  "updated": "2026-10-31T14:25:04.969993Z",
   "account": {
     "username": "technova.solutions",
-    "followers": 6,
-    "media_count": 129
+    "followers": 7,
+    "media_count": 131
   },
   "media": [
-    {
-      "date": "2026-08-07",
-      "topic": "Why fast-loading websites win more customers",
-      "style": "question_hook",
-      "category": "",
-      "post": {
-        "reach": 0,
-        "likes": 0,
-        "comments": 0,
-        "saved": 0,
-        "shares": 0
-      },
-      "reel": {
-        "views": 5,
-        "reach": 4,
-        "likes": 0,
-        "comments": 0,
-        "saved": 0,
-        "shares": 0,
-        "ig_reels_avg_watch_time": 2907
-      }
-    },
     {
       "date": "2026-08-09",
       "topic": "How slow websites are quietly killing your sales",
@@ -664,6 +642,28 @@
         "saved": 0,
         "shares": 0,
         "ig_reels_avg_watch_time": 678
+      }
+    },
+    {
+      "date": "2026-10-30",
+      "topic": "How real-time inventory tracking prevents lost sales",
+      "style": "stat_shock",
+      "category": "",
+      "post": {
+        "reach": 1,
+        "likes": 0,
+        "comments": 0,
+        "saved": 0,
+        "shares": 0
+      },
+      "reel": {
+        "views": 0,
+        "reach": 0,
+        "likes": 0,
+        "comments": 0,
+        "saved": 0,
+        "shares": 0,
+        "ig_reels_avg_watch_time": 0
       }
     }
   ]
