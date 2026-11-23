@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-22T16:04:36.837238Z",
+  "updated": "2026-11-23T19:58:52.443226Z",
   "account": {
     "username": "technova.solutions",
     "followers": 6,
@@ -628,20 +628,20 @@
       "style": "myth_bust",
       "category": "",
       "post": {
-        "reach": 1,
+        "reach": 2,
         "likes": 0,
         "comments": 0,
         "saved": 0,
         "shares": 0
       },
       "reel": {
-        "views": 5,
-        "reach": 4,
+        "views": 6,
+        "reach": 5,
         "likes": 0,
         "comments": 0,
         "saved": 0,
         "shares": 0,
-        "ig_reels_avg_watch_time": 678
+        "ig_reels_avg_watch_time": 1041
       }
     },
     {
@@ -650,20 +650,20 @@
       "style": "stat_shock",
       "category": "",
       "post": {
-        "reach": 1,
+        "reach": 2,
         "likes": 0,
         "comments": 0,
         "saved": 0,
         "shares": 0
       },
       "reel": {
-        "views": 0,
-        "reach": 0,
+        "views": 2,
+        "reach": 1,
         "likes": 0,
         "comments": 0,
         "saved": 0,
         "shares": 0,
-        "ig_reels_avg_watch_time": 0
+        "ig_reels_avg_watch_time": 3139
       }
     }
   ]
